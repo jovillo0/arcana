@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Emperador — estructura que sostiene</title><desc id="d">Cuatro pilares de piedra definen un refugio abierto ante una montaña de cima cuadrada, iluminada de lado.</desc>
+  <defs>
+    <linearGradient id="air" x2="0" y2="1"><stop stop-color="#111a22"/><stop offset=".6" stop-color="#393431"/><stop offset="1" stop-color="#171d21"/></linearGradient>
+    <linearGradient id="stone" x2=".8" y2="1"><stop stop-color="#8a7657"/><stop offset=".4" stop-color="#51483d"/><stop offset="1" stop-color="#29292a"/></linearGradient>
+    <pattern id="cuts" width="41" height="35" patternUnits="userSpaceOnUse"><path d="M2 9h14m13 17h10" stroke="#d4c29c" stroke-opacity=".13"/></pattern>
+  </defs>
+  <rect width="400" height="560" fill="url(#air)"/>
+  <path d="m71 285 42-55 49 38 39-76 50 70 42-46 55 69v88H71Z" fill="#282b2b"/>
+  <path d="m112 229 50 38 39-76 50 70 42-46" fill="none" stroke="#a29376" stroke-opacity=".46" stroke-width="2"/>
+  <path d="M54 447V206h292v241M75 429V226h250v203" fill="none" stroke="#877455" stroke-opacity=".4" stroke-width="2"/>
+  <path d="M65 226h270v23H65Zm0 190h270v28H65Z" fill="url(#stone)" stroke="#b59a68" stroke-opacity=".52"/>
+  <path d="M83 250h32v163H83Zm89 0h32v163h-32Zm89 0h32v163h-32Z" fill="url(#stone)" stroke="#b59a68" stroke-opacity=".38"/>
+  <path d="M54 206h292v241H54Z" fill="url(#cuts)" opacity=".7"/>
+  <path d="M71 447h273v22H71Z" fill="#34302b" stroke="#806f50" stroke-opacity=".56"/>
+  <path d="M211 283v112" stroke="#b59a68" stroke-width="3" stroke-opacity=".7"/>
+  <path d="m203 287 8-14 8 14m-16 107 8 13 8-13" fill="#b59a68" fill-opacity=".65"/>
+  <path d="m92 446 24-4 6 5-17 8Zm2 1 8 4m189-207-22 18m-115 83-19 21" fill="none" stroke="#d6c298" stroke-opacity=".56"/>
+  <path d="M54 206h292" stroke="#d0bc92" stroke-opacity=".54" stroke-width="2"/>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="title desc">
+  <title id="title">El Loco — estudio compositivo</title>
+  <desc id="desc">Una semilla ante un horizonte amplio y un círculo abierto, con una estrella tenue y espacio para comenzar.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.8" y2="1">
+      <stop stop-color="#101923"/>
+      <stop offset=".63" stop-color="#12171d"/>
+      <stop offset="1" stop-color="#211a20"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#30232a"/>
+      <stop offset="1" stop-color="#11171c"/>
+    </linearGradient>
+    <radialGradient id="dawn" cx="0" cy="1" r="1">
+      <stop stop-color="#85919a" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#85919a" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grain" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M4 8h1M21 27h1M30 12h1M12 19h1" stroke="#d5be8f" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="560" fill="url(#sky)"/>
+  <rect width="400" height="560" fill="url(#grain)" opacity=".4"/>
+  <ellipse cx="174" cy="357" rx="180" ry="92" fill="url(#dawn)"/>
+
+  <circle cx="180" cy="361" r="143" fill="none" stroke="#b59a68" stroke-opacity=".49" stroke-width="1.6" stroke-dasharray="646 252" transform="rotate(-24 180 361)"/>
+  <path d="M31 365c66-9 102-8 149-3 58 6 114 3 189-7" fill="none" stroke="#dbc596" stroke-opacity=".62" stroke-width="1.5"/>
+  <path d="M47 372c70-5 114-1 164 2 43 3 94 0 142-6" fill="none" stroke="#806f50" stroke-opacity=".36" stroke-width="1"/>
+  <path d="M0 399c78-23 130-17 184-11 69 8 139-7 216-23v195H0Z" fill="url(#ground)"/>
+  <path d="M0 399c78-23 130-17 184-11 69 8 139-7 216-23" fill="none" stroke="#b59a68" stroke-opacity=".19" stroke-width="1"/>
+
+  <path d="M34 317c28-7 39-18 53-29m-34 43c29-7 52-18 71-34m-46 40c20-3 32-7 46-15" fill="none" stroke="#aaa397" stroke-opacity=".18" stroke-width="1"/>
+  <path d="M133 345c10-13 19-17 30-15 8 2 11 9 7 15-4 6-14 7-20 3-5-3-4-9 1-12" fill="none" stroke="#b59a68" stroke-opacity=".34" stroke-width="1"/>
+
+  <circle cx="91" cy="111" r="2.5" fill="#f0e9dc" fill-opacity=".82"/>
+  <path d="M91 103v4m0 8v4m-8-8h4m8 0h4" stroke="#f0e9dc" stroke-opacity=".4" stroke-width="1"/>
+
+  <ellipse cx="205" cy="448" rx="47" ry="7" fill="#090f15" fill-opacity=".74"/>
+  <path d="M174 431c5-16 19-29 31-31 15 8 25 22 26 37-17 5-38 3-57-6Z" fill="#806f50" fill-opacity=".84" stroke="#dbc596" stroke-opacity=".82" stroke-width="1.8"/>
+  <path d="M204 402c5 10 10 21 13 33m-10-21-11 5" fill="none" stroke="#11171c" stroke-width="1.5"/>
+  <path d="M220 439c29 5 51 3 77-4" fill="none" stroke="#b59a68" stroke-opacity=".12" stroke-width="1"/>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Diablo — deseo y apego</title><desc id="d">Un espejo oscuro refleja cadenas que parecen cerradas aunque un eslabón abierto ofrece una salida posible.</desc>
+  <defs>
+    <linearGradient id="earth" x2="0" y2="1"><stop stop-color="#111820"/><stop offset=".57" stop-color="#262428"/><stop offset="1" stop-color="#171a1b"/></linearGradient>
+    <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#596064" stop-opacity=".35"/><stop offset=".5" stop-color="#171d21"/><stop offset="1" stop-color="#0c1217"/></linearGradient>
+    <radialGradient id="fire"><stop stop-color="#b64c35" stop-opacity=".64"/><stop offset=".3" stop-color="#873d31" stop-opacity=".18"/><stop offset="1" stop-color="#873d31" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#earth)"/>
+  <path d="M0 355 400 306v254H0Z" fill="#282322"/>
+  <path d="M0 359 400 310" stroke="#89704e" stroke-opacity=".56" stroke-width="2"/>
+  <path d="M175 350 205 315l32 35-32 34Z" fill="url(#fire)"/>
+  <path d="M0 377 165 354l39 24 196-30" fill="none" stroke="#873d31" stroke-opacity=".45" stroke-width="5"/>
+  <path d="M73 109h254v220H73Z" fill="url(#glass)" stroke="#967e58" stroke-opacity=".56" stroke-width="2"/>
+  <path d="M86 122h227v194H86Z" fill="none" stroke="#505357" stroke-opacity=".5"/>
+  <path d="M102 279c23-58 62-89 111-92 48-3 88 29 101 81" fill="none" stroke="#b29465" stroke-opacity=".29" stroke-width="2"/>
+  <path d="M100 267c31-32 63-48 96-48m11 0 22 2 34 8" fill="none" stroke="#c2a46c" stroke-width="4" stroke-linecap="round"/>
+  <path d="M194 220 212 211" stroke="#1d2324" stroke-width="7"/>
+  <path d="M212 211 222 209" stroke="#d6b77a" stroke-width="3"/>
+  <path d="M116 291c46 17 99 18 156 4" fill="none" stroke="#b39869" stroke-opacity=".56" stroke-width="2"/>
+  <path d="M113 290c6-17 20-24 36-15 1 17-9 28-28 29m141-1c6-17 20-24 36-15 1 17-9 28-28 29" fill="none" stroke="#ad9467" stroke-width="3"/>
+  <path d="M199 318 133 490m69-172 15 176m-8-175 81 162" stroke="#11171a" stroke-opacity=".66" stroke-width="6"/>
+  <path d="M196 318a75 75 0 0 0-63 35m63-35a75 75 0 0 1 67 28" fill="none" stroke="#ba9b64" stroke-opacity=".36"/>
+</svg>

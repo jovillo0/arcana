@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Sol — vida manifiesta</title><desc id="d">Un disco solar ilumina un espacio compartido, dos figuras en paralelo y un muro bajo cuya sombra conserva un límite.</desc>
+  <defs>
+    <linearGradient id="morning" x2="0" y2="1"><stop stop-color="#172029"/><stop offset=".56" stop-color="#4a4031"/><stop offset="1" stop-color="#222522"/></linearGradient>
+    <radialGradient id="sun"><stop stop-color="#e0c88c" stop-opacity=".66"/><stop offset=".28" stop-color="#caa968" stop-opacity=".23"/><stop offset="1" stop-color="#caa968" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#morning)"/>
+  <ellipse cx="202" cy="195" rx="160" ry="151" fill="url(#sun)"/>
+  <circle cx="201" cy="175" r="48" fill="#cdb77f" fill-opacity=".68"/>
+  <circle cx="201" cy="175" r="59" fill="none" stroke="#d9c795" stroke-opacity=".48"/>
+  <path d="m201 97v-27m0 183v-24m-77-54H96m209 0h-28m-150-54-20-20m146 146-18-18m-1-108 20-20m-145 145 19-19" stroke="#d8c491" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M0 385c82-23 147-20 207-8 75 15 129 9 193-10v193H0Z" fill="#4b4839"/>
+  <path d="M0 431c69-20 132-8 199 6 69 14 132 10 201-7" fill="none" stroke="#b59a68" stroke-opacity=".31"/>
+  <path d="M130 381V294h18v87m101 0v-93h19v93" fill="#24292a" stroke="#9a8358" stroke-opacity=".52"/>
+  <circle cx="139" cy="283" r="11" fill="#ae9870"/><circle cx="258" cy="278" r="12" fill="#c3ac7f"/>
+  <path d="m126 307 27-9 20 80h-53Zm119-8 28 6 18 73h-55Z" fill="#252b2b"/>
+  <path d="M0 452h117l22-20 24 17h91l28-21 33 24h85v35H0Z" fill="#302d28" stroke="#88724f" stroke-opacity=".6"/>
+  <path d="M44 451c21-17 40-20 57-6-2 20-17 30-42 30m247-95c-3-34 6-52 31-60 21 17 22 37 2 62" fill="none" stroke="#8c896a" stroke-width="6"/>
+  <path d="M73 477c14-2 22-1 31 3" fill="none" stroke="#d5c398" stroke-width="2"/>
+</svg>

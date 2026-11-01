@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">La Justicia — acto y consecuencia</title><desc id="d">Una balanza todavía desigual, una hoja reflectante y dos cuadrados desplazados examinan proporciones sin dictar sentencia.</desc>
+  <defs>
+    <linearGradient id="room" x2="0" y2="1"><stop stop-color="#111a22"/><stop offset=".7" stop-color="#28292a"/><stop offset="1" stop-color="#171b1e"/></linearGradient>
+    <linearGradient id="mirror"><stop stop-color="#9ba5a0" stop-opacity=".3"/><stop offset=".48" stop-color="#2c3537"/><stop offset="1" stop-color="#11191d"/></linearGradient>
+    <radialGradient id="toplight"><stop stop-color="#d4c19a" stop-opacity=".2"/><stop offset="1" stop-color="#d4c19a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#room)"/>
+  <ellipse cx="200" cy="165" rx="154" ry="120" fill="url(#toplight)"/>
+  <path d="M56 114h197v197H56Zm91 57h197v197H147Z" fill="none" stroke="#a58c60" stroke-opacity=".33" stroke-width="2"/>
+  <path d="M0 404h400" stroke="#b59a68" stroke-opacity=".32"/>
+  <path d="M194 204v172m-66-132 129 13m-129-13-11 57m140-44 10 58" fill="none" stroke="#b9a574" stroke-width="3"/>
+  <path d="m112 301 30-5 25 22-30 7Zm133-30 29 4 24 21-29-2Z" fill="#4b4941" stroke="#c5b58f" stroke-opacity=".6" stroke-width="2"/>
+  <path d="M194 210 97 188m97 22 111 6" stroke="#a98f61" stroke-width="2"/>
+  <path d="m278 203 8-20 8 20m-16 165 8 16 8-16" fill="#b59a68" fill-opacity=".6"/>
+  <path d="M311 267h34v146h-34z" fill="url(#mirror)" stroke="#9a8762" stroke-opacity=".5"/>
+  <path d="M327 277v129" stroke="#d4c8aa" stroke-opacity=".22"/>
+  <path d="M194 219 171 426" stroke="#111719" stroke-width="8" stroke-opacity=".57"/>
+  <circle cx="194" cy="204" r="7" fill="#c7b080"/>
+  <path d="m106 300 9-8m149-18 11 3" stroke="#dfd2b5" stroke-opacity=".6"/>
+</svg>

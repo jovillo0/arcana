@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="title desc">
+  <title id="title">El Loco — estudio compositivo</title>
+  <desc id="desc">Una semilla ante un horizonte amplio y un círculo abierto, con una estrella tenue y espacio para comenzar.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.8" y2="1">
+      <stop stop-color="#101923"/>
+      <stop offset=".63" stop-color="#12171d"/>
+      <stop offset="1" stop-color="#211a20"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#30232a"/>
+      <stop offset="1" stop-color="#11171c"/>
+    </linearGradient>
+    <radialGradient id="dawn" cx="0" cy="1" r="1">
+      <stop stop-color="#85919a" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#85919a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="seed-matter" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#655542"/>
+      <stop offset=".55" stop-color="#a88e61"/>
+      <stop offset="1" stop-color="#554638"/>
+    </linearGradient>
+    <pattern id="grain" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M4 8h1M21 27h1M30 12h1M12 19h1" stroke="#d5be8f" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="560" fill="url(#sky)"/>
+  <rect width="400" height="560" fill="url(#grain)" opacity=".4"/>
+  <ellipse cx="174" cy="357" rx="180" ry="92" fill="url(#dawn)"/>
+
+  <circle cx="180" cy="361" r="143" fill="none" stroke="#b59a68" stroke-opacity=".52" stroke-width="1.8" stroke-dasharray="646 252" transform="rotate(-24 180 361)"/>
+  <path d="M31 365c66-9 102-8 149-3 58 6 114 3 189-7" fill="none" stroke="#dbc596" stroke-opacity=".68" stroke-width="2.2"/>
+  <path d="M47 372c70-5 114-1 164 2 43 3 94 0 142-6" fill="none" stroke="#806f50" stroke-opacity=".36" stroke-width="1"/>
+  <path d="M0 399c78-23 130-17 184-11 69 8 139-7 216-23v195H0Z" fill="url(#ground)"/>
+  <path d="M0 399c78-23 130-17 184-11 69 8 139-7 216-23" fill="none" stroke="#b59a68" stroke-opacity=".19" stroke-width="1"/>
+
+  <path d="M34 317c28-7 39-18 53-29m-34 43c29-7 52-18 71-34m-46 40c20-3 32-7 46-15" fill="none" stroke="#aaa397" stroke-opacity=".18" stroke-width="1"/>
+  <path d="M133 345c10-13 19-17 30-15 8 2 11 9 7 15-4 6-14 7-20 3-5-3-4-9 1-12" fill="none" stroke="#b59a68" stroke-opacity=".34" stroke-width="1"/>
+
+  <circle cx="205" cy="111" r="3" fill="#f0e9dc" fill-opacity=".88"/>
+  <path d="M205 101v5m0 10v5m-9-10h5m8 0h5" stroke="#f0e9dc" stroke-opacity=".48" stroke-width="1.2"/>
+
+  <ellipse cx="205" cy="448" rx="45" ry="7" fill="#090f15" fill-opacity=".82"/>
+  <path d="M171 431c6-17 20-30 34-32 16 9 27 23 28 39-18 5-41 3-62-7Z" fill="url(#seed-matter)" stroke="#dbc596" stroke-opacity=".94" stroke-width="2.2"/>
+  <path d="M179 427c8-12 17-20 26-24m-1 5c5 10 10 20 13 32m-10-21-11 5" fill="none" stroke="#11171c" stroke-opacity=".82" stroke-width="1.5"/>
+  <path d="M220 439c29 5 51 3 77-4" fill="none" stroke="#b59a68" stroke-opacity=".12" stroke-width="1"/>
+</svg>

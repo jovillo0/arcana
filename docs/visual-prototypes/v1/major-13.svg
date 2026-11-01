@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="title desc">
+  <title id="title">La Muerte — estudio compositivo</title>
+  <desc id="desc">Un círculo oscuro cruza un umbral; una crisálida vacía y una hoja seca acompañan un brote frente a una luz estrecha.</desc>
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#10171d"/>
+      <stop offset=".54" stop-color="#21171e"/>
+      <stop offset="1" stop-color="#0b1218"/>
+    </linearGradient>
+    <linearGradient id="door" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#090f15"/>
+      <stop offset=".48" stop-color="#12181c"/>
+      <stop offset=".53" stop-color="#dbc596" stop-opacity=".74"/>
+      <stop offset=".56" stop-color="#65705e" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#090f15"/>
+    </linearGradient>
+    <linearGradient id="threshold" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#dbc596" stop-opacity=".54"/>
+      <stop offset="1" stop-color="#dbc596" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="dawn" cx=".5" cy=".55" r=".55">
+      <stop stop-color="#dbc596" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#dbc596" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grain" width="34" height="34" patternUnits="userSpaceOnUse">
+      <path d="M4 8h1M21 27h1M30 12h1M12 19h1" stroke="#d5be8f" stroke-opacity=".09" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="560" fill="url(#field)"/>
+  <rect width="400" height="560" fill="url(#grain)" opacity=".42"/>
+
+  <ellipse cx="212" cy="296" rx="170" ry="195" fill="url(#dawn)"/>
+  <circle cx="202" cy="289" r="144" fill="none" stroke="#b59a68" stroke-opacity=".64" stroke-width="1.8" stroke-dasharray="350 28 374 154" transform="rotate(-90 202 289)"/>
+  <path d="M60 433V229c0-8 6-14 14-14h62m132 0h58c8 0 14 6 14 14v204" fill="none" stroke="#806f50" stroke-opacity=".48" stroke-width="1.1"/>
+  <path d="M117 435V195h166v240Z" fill="#090f15" fill-opacity=".86" stroke="#b59a68" stroke-opacity=".3" stroke-width="1"/>
+  <path d="M145 435V207h110v228Z" fill="url(#door)"/>
+  <path d="M156 435V220h88v215" fill="none" stroke="#aaa397" stroke-opacity=".17" stroke-width="1"/>
+  <path d="M200 221v185" stroke="#dbc596" stroke-opacity=".18" stroke-width=".8"/>
+  <path d="M145 435h110" stroke="url(#threshold)" stroke-width="8"/>
+  <path d="M114 439h174" stroke="#b59a68" stroke-opacity=".72" stroke-width="1.6"/>
+  <path d="M132 448h137" stroke="#806f50" stroke-opacity=".35" stroke-width="1"/>
+
+  <path d="M103 252c-2-17 7-29 20-38 11 10 16 25 10 39-5 12-17 18-27 12-5-3-7-8-3-13Z" fill="#11171c" stroke="#aaa397" stroke-opacity=".52" stroke-width="1.1"/>
+  <path d="M107 256c7-11 15-22 25-34" fill="none" stroke="#b59a68" stroke-opacity=".52" stroke-width=".9"/>
+
+  <path d="M157 405c9-4 16-9 22-17m-15 17c8-2 14-6 20-12" fill="none" stroke="#aaa397" stroke-opacity=".18" stroke-width="1"/>
+  <path d="M252 438c-1-13 2-24 9-33m-9 33c-9-9-14-19-13-29m13 21c7-6 14-8 21-8" fill="none" stroke="#aab39a" stroke-width="1.8"/>
+  <path d="M261 405c1 8 1 15 0 21m-21-20c4 7 8 12 13 16" fill="none" stroke="#c1c4ad" stroke-opacity=".76" stroke-width="1.2"/>
+  <circle cx="252" cy="438" r="3.2" fill="#dbc596"/>
+
+  <path d="M263 416a14 14 0 0 1 17-11m-17 11a9 9 0 0 1 11-7" fill="none" stroke="#dbc596" stroke-opacity=".36" stroke-width=".8"/>
+  <path d="M278 402c6-5 10-11 12-18" fill="none" stroke="#b59a68" stroke-opacity=".25" stroke-width=".8"/>
+</svg>

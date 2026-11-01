@@ -1,0 +1,2482 @@
+:root {
+  font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+  color: #f0e9dc;
+  background: #090f15;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --color-ink: #090f15;
+  --color-surface: #111a21;
+  --color-surface-raised: #182129;
+  --color-wine: #321a24;
+  --color-wine-deep: #21141b;
+  --color-ivory: #f0e9dc;
+  --color-warm-gray: #aaa397;
+  --color-gold: #b59a68;
+  --color-gold-soft: #806f50;
+  --color-gold-bright: #dbc596;
+  --color-line: rgba(213, 190, 143, 0.22);
+  --color-focus: #ead6a9;
+  --shadow-ritual: 0 22px 70px rgba(0, 0, 0, 0.3);
+  --font-body: "DM Sans", "Segoe UI", Arial, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --ink: var(--color-ink);
+  --panel: var(--color-surface);
+  --panel-soft: var(--color-surface-raised);
+  --ivory: var(--color-ivory);
+  --muted: var(--color-warm-gray);
+  --gold: var(--color-gold);
+  --gold-bright: var(--color-gold-bright);
+  --line: var(--color-line);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 8%, rgba(65, 34, 46, 0.28), transparent 38rem),
+    var(--ink);
+  font-family: var(--font-body);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+main h1[tabindex="-1"]:focus,
+main h2[tabindex="-1"]:focus {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 6px;
+}
+
+.page-shell {
+  width: min(100% - 48px, 1120px);
+  margin: 0 auto;
+}
+
+.site-header {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ivory);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-decoration: none;
+}
+
+.wordmark__symbol {
+  color: var(--gold);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.header-note,
+.eyebrow,
+.site-footer > span {
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.19em;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 92px 0 60px;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.eyebrow > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+.section-heading h2,
+.ritual-panel h2,
+.arcana-card h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+}
+
+h1 {
+  margin-bottom: 19px;
+  font-size: clamp(52px, 7vw, 78px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+
+h1 em {
+  color: var(--gold-bright);
+  font-weight: 400;
+}
+
+.intro__copy {
+  max-width: 430px;
+  margin: 0 auto;
+  color: #b7afa3;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.ritual-panel {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 27px 32px 29px;
+  border: 1px solid var(--line);
+  background: linear-gradient(120deg, rgba(31, 28, 25, 0.85), rgba(23, 22, 21, 0.75));
+}
+
+.ritual-panel__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+
+.step-mark {
+  padding-top: 4px;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 17px;
+}
+
+.ritual-panel h2 {
+  margin: 0 0 4px;
+  font-size: 25px;
+}
+
+.ritual-panel__heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.question-form {
+  margin: 28px 0 0 37px;
+}
+
+.question-form label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+}
+
+.question-form > p:not(.error-message) {
+  margin: 0 0 13px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.question-form textarea {
+  display: block;
+  width: 100%;
+  min-height: 116px;
+  resize: vertical;
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ivory);
+  background: rgba(12, 12, 11, 0.45);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.question-form textarea::placeholder {
+  color: #777168;
+}
+
+.question-form textarea:focus {
+  border-color: rgba(212, 187, 135, 0.72);
+  outline: none;
+}
+
+.question-form .draw-button {
+  margin-top: 15px;
+}
+
+.ritual-panel__controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 24px 0 0 37px;
+}
+
+.count-picker {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.count-picker legend {
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.count-picker__options {
+  display: flex;
+  gap: 8px;
+}
+
+.count-picker__option {
+  display: flex;
+  width: 68px;
+  height: 53px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.count-picker__option span {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.count-picker__option small {
+  font-size: 8px;
+}
+
+.count-picker__option:hover,
+.count-picker__option.is-selected {
+  border-color: rgba(212, 187, 135, 0.7);
+  background: rgba(184, 154, 101, 0.08);
+}
+
+.count-picker__option.is-selected span {
+  color: var(--gold-bright);
+}
+
+.draw-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 19px;
+  border: 1px solid var(--gold);
+  color: #171411;
+  background: var(--gold-bright);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.draw-button:hover {
+  transform: translateY(-1px);
+  background: #e0cc9f;
+}
+
+.draw-button span {
+  font-size: 16px;
+}
+
+.intro__start {
+  min-width: 150px;
+  margin-top: 28px;
+}
+
+.error-message {
+  margin: 16px 0 0 37px;
+  color: #e3a49b;
+  font-size: 12px;
+}
+
+.recommendation-panel,
+.manual-spreads,
+.confirmed-spread {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.recommendation-panel {
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: linear-gradient(130deg, rgba(31, 28, 25, 0.88), rgba(23, 22, 21, 0.75));
+}
+
+.recommendation-panel__top,
+.manual-spreads__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.recommendation-panel__top h2,
+.manual-spreads__heading h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.recommendation-panel__top .eyebrow,
+.manual-spreads__heading .eyebrow {
+  margin-bottom: 5px;
+}
+
+.recommendation-question {
+  margin: 19px 0 23px;
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-style: italic;
+}
+
+.field-label {
+  display: block;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  line-height: 1.6;
+}
+
+.recommendation-spread__intro h3 {
+  margin: 7px 0 8px;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 39px;
+  font-weight: 400;
+}
+
+.recommendation-spread__intro > p {
+  max-width: 650px;
+  color: #c3baac;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.recommendation-spread__intro > .spread-purpose {
+  color: var(--muted);
+}
+
+.spread-why strong,
+.spread-purpose strong {
+  color: var(--gold-bright);
+  font-weight: 500;
+}
+
+.card-count {
+  display: inline-block;
+  margin: 0 0 20px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  color: var(--gold-bright);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spread-preview {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.65fr) minmax(0, 1.35fr);
+  gap: 25px;
+  align-items: center;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+}
+
+.spread-preview__layout {
+  position: relative;
+  width: 100%;
+  min-height: 210px;
+  border: 1px solid rgba(213, 190, 143, 0.14);
+  background:
+    radial-gradient(ellipse, rgba(184, 154, 101, 0.08), transparent 70%),
+    rgba(13, 13, 12, 0.35);
+}
+
+.spread-preview__position {
+  position: absolute;
+  display: grid;
+  width: 32px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(212, 187, 135, 0.7);
+  color: var(--gold-bright);
+  background: #191714;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+}
+
+.spread-preview__list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spread-preview__list li {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  gap: 10px;
+}
+
+.spread-preview__list li > span {
+  padding-top: 1px;
+  color: var(--gold);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px;
+}
+
+.spread-preview__list strong {
+  color: var(--ivory);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.spread-preview__list p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.recommendation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.text-button {
+  padding: 8px 0;
+  border: 0;
+  color: var(--gold-bright);
+  background: transparent;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.text-button:hover {
+  color: var(--ivory);
+}
+
+.manual-spreads {
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: rgba(23, 22, 21, 0.72);
+}
+
+.manual-spreads__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.manual-spread-card {
+  display: flex;
+  min-height: 190px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 17px;
+  border: 1px solid var(--line);
+  background: rgba(12, 12, 11, 0.28);
+}
+
+.manual-spread-card__meta {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.manual-spread-card h3 {
+  margin: 18px 0 6px;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.manual-spread-card > p {
+  margin: 0 0 10px;
+  color: #aaa195;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.manual-spread-card__positions {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.manual-spread-card__positions summary {
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.manual-spread-card__positions ol {
+  display: grid;
+  gap: 4px;
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: #c8bfb2;
+  line-height: 1.5;
+}
+
+.manual-spread-card .text-button {
+  margin-top: auto;
+}
+
+.confirmed-context {
+  max-width: 900px;
+  margin: 0 auto 27px;
+  padding: 18px 22px;
+  border-left: 1px solid var(--gold);
+  background: rgba(184, 154, 101, 0.05);
+}
+
+.confirmed-context .eyebrow {
+  margin-bottom: 7px;
+}
+
+.confirmed-context > p:last-child {
+  margin: 0;
+  color: #c9c0b2;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+  font-style: italic;
+}
+
+.confirmed-spread {
+  padding: 26px 30px;
+  border: 1px solid var(--line);
+  background: rgba(23, 22, 21, 0.72);
+}
+
+.confirmed-spread .section-heading {
+  align-items: center;
+}
+
+.confirmed-spread__purpose {
+  margin: -7px 0 13px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.confirmed-spread .draw-button {
+  margin-top: 4px;
+}
+
+.preparation-note {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border-left: 1px solid var(--gold);
+  color: #c5bba9;
+  background: rgba(184, 154, 101, 0.06);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.restart-button {
+  display: block;
+  margin: 17px auto 0;
+}
+
+.ritual-preparation,
+.spread-reveal,
+.reading-summary {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 50% 20%, rgba(74, 37, 44, 0.18), transparent 31rem),
+    rgba(23, 22, 21, 0.82);
+}
+
+.ritual-preparation {
+  text-align: center;
+}
+
+.ritual-preparation > .eyebrow {
+  margin-bottom: 15px;
+}
+
+.ritual-preparation > h2,
+.reading-summary > h2 {
+  margin: 0 0 14px;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(35px, 5vw, 48px);
+  font-weight: 400;
+}
+
+.ritual-preparation blockquote {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.concentration-copy {
+  max-width: 480px;
+  margin: 20px auto 30px;
+  color: #b7afa3;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.concentration-copy p {
+  margin: 0;
+}
+
+.ritual-preparation__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ritual-spread-info {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 26px;
+  margin: 0 0 25px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.ritual-spread-info h3 {
+  margin: 7px 0;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.ritual-spread-info p {
+  margin: 0 0 8px;
+  color: #c0b7a8;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.ritual-spread-info p.interpretive-path {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.ritual-spread-info ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px 16px;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ritual-spread-info li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 25px;
+  color: #d3cabb;
+  font-size: 10px;
+}
+
+.ritual-spread-info li span {
+  color: var(--gold);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
+}
+
+.draw-button--primary {
+  min-width: 240px;
+  min-height: 55px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.shuffle-state {
+  display: flex;
+  min-height: 96px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.shuffle-state__seal {
+  color: var(--gold-bright);
+  font-size: 26px;
+  animation: shuffle-seal 850ms ease-in-out infinite alternate;
+}
+
+.shuffle-state p {
+  margin: 0;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+}
+
+.shuffle-state > span:last-child {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.spread-reveal {
+  padding: 26px 30px 20px;
+}
+
+.spread-reveal .section-heading {
+  margin-bottom: 22px;
+}
+
+.spread-reveal .section-heading h2 {
+  font-size: 32px;
+}
+
+.tarot-table {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.72;
+  min-height: 320px;
+  border: 1px solid rgba(213, 190, 143, 0.2);
+  background:
+    radial-gradient(ellipse at center, rgba(100, 48, 57, 0.2), transparent 60%),
+    linear-gradient(140deg, rgba(11, 22, 31, 0.96), rgba(33, 17, 21, 0.96));
+  overflow: hidden;
+}
+
+.tarot-table::before,
+.tarot-table::after {
+  position: absolute;
+  inset: 5%;
+  border: 1px solid rgba(212, 187, 135, 0.1);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.tarot-table::after {
+  inset: 12%;
+  border-color: rgba(212, 187, 135, 0.07);
+  transform: rotate(45deg) scaleY(0.62);
+}
+
+.tarot-slot {
+  position: absolute;
+  z-index: 1;
+  width: clamp(68px, 11vw, 112px);
+  aspect-ratio: 0.68;
+  transform: translate(-50%, -50%);
+}
+
+.tarot-card__inner {
+  position: absolute;
+  inset: 0;
+  transition: transform 680ms cubic-bezier(0.2, 0.72, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.tarot-slot.is-revealed .tarot-card__inner {
+  transform: rotateY(180deg);
+}
+
+.tarot-card__face {
+  position: absolute;
+  display: flex;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(212, 187, 135, 0.63);
+  backface-visibility: hidden;
+}
+
+.tarot-card__back {
+  background:
+    linear-gradient(45deg, transparent 48%, rgba(212, 187, 135, 0.05) 49%, rgba(212, 187, 135, 0.05) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(212, 187, 135, 0.05) 49%, rgba(212, 187, 135, 0.05) 51%, transparent 52%),
+    radial-gradient(ellipse, rgba(112, 43, 55, 0.5), transparent 75%),
+    linear-gradient(155deg, #0e1a21, #180f13 56%, #101820);
+}
+
+.tarot-card__back::before,
+.tarot-card__back::after {
+  position: absolute;
+  width: 72%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(212, 187, 135, 0.5);
+  border-radius: 50%;
+  content: "";
+}
+
+.tarot-card__back::after {
+  width: 53%;
+  border-color: rgba(212, 187, 135, 0.32);
+  transform: rotate(45deg) scaleY(0.58);
+}
+
+.tarot-card__back-mark {
+  z-index: 1;
+  color: var(--gold-bright);
+  font-size: clamp(16px, 2.2vw, 23px);
+}
+
+.tarot-card__back-orbit {
+  position: absolute;
+  width: 90%;
+  height: 44%;
+  border: 1px solid rgba(212, 187, 135, 0.2);
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+.tarot-card__back-seal {
+  position: absolute;
+  width: 35%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(212, 187, 135, 0.25);
+  transform: rotate(45deg);
+}
+
+.tarot-card__back-index {
+  position: absolute;
+  bottom: 5px;
+  color: rgba(212, 187, 135, 0.75);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 10px;
+}
+
+.tarot-card__front {
+  padding: 8px 6px;
+  border-color: rgba(212, 187, 135, 0.62);
+  color: var(--ivory);
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(184, 154, 101, 0.12), transparent 70%),
+    linear-gradient(155deg, #211a18, #0f161b);
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.tarot-card__front-position {
+  color: var(--gold);
+  font-size: clamp(5px, 0.7vw, 8px);
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+}
+
+.tarot-card__front-numeral {
+  margin-top: 8px;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(12px, 2vw, 20px);
+}
+
+.tarot-card__front-sigil {
+  display: grid;
+  width: 34%;
+  aspect-ratio: 1;
+  place-items: center;
+  margin: 4px 0 3px;
+  border: 1px solid rgba(212, 187, 135, 0.52);
+  border-radius: 50%;
+  color: var(--gold-bright);
+  font-size: clamp(10px, 1.4vw, 15px);
+}
+
+.tarot-card__front h3 {
+  margin: 3px 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(11px, 1.45vw, 17px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.tarot-card__front p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 2px 0 0;
+  color: #bdb3a5;
+  font-size: clamp(6px, 0.8vw, 9px);
+  line-height: 1.3;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.tarot-slot__trigger {
+  position: absolute;
+  z-index: 3;
+  inset: -3px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tarot-slot__trigger:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 4px;
+}
+
+.tarot-slot[data-state="next"] .tarot-card__back {
+  border-color: var(--gold-bright);
+}
+
+.tarot-slot[data-state="next"] .tarot-card__back-mark {
+  animation: seal-attention 2.4s ease-in-out infinite;
+}
+
+.tarot-slot[data-state="pending"] {
+  opacity: 0.62;
+}
+
+.tarot-slot__caption {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  width: max-content;
+  max-width: 140px;
+  color: #c0b7a8;
+  font-size: clamp(6px, 0.75vw, 8px);
+  line-height: 1.25;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.tarot-slot[data-state="next"] .tarot-slot__caption {
+  color: var(--gold-bright);
+}
+
+.reveal-announcement {
+  min-height: 20px;
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+  text-align: center;
+}
+
+.reading-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 23px auto 0;
+  text-align: center;
+}
+
+.reading-complete p {
+  color: #b7afa3;
+  font-size: 11px;
+}
+
+.reading-summary__question {
+  max-width: 700px;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 22px;
+  font-style: italic;
+}
+
+.reading-summary__spread {
+  margin: 20px 0;
+  padding: 17px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.reading-summary__spread > span {
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+}
+
+.reading-summary__spread h3 {
+  margin: 5px 0;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.reading-summary__cards {
+  margin: 0 0 12px;
+}
+
+.reading-summary__cards > summary {
+  width: fit-content;
+  color: var(--gold-bright);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.reading-summary__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reading-summary__cards[open] .reading-summary__list {
+  margin-top: 12px;
+}
+
+.reading-summary__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  background: rgba(12, 12, 11, 0.27);
+}
+
+.reading-summary__position {
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.reading-summary__arcana {
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+}
+
+.reading-summary__core {
+  color: #aaa195;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.symbolic-reading {
+  display: grid;
+  gap: 34px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.lens-selector {
+  display: grid;
+  gap: 8px;
+  max-width: 520px;
+  margin: 24px 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.lens-selector legend {
+  padding: 0 7px;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 19px;
+}
+
+.lens-selector label {
+  color: #c8bfb2;
+  font-size: 10px;
+}
+
+.lens-selector select {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ivory);
+  background: #171615;
+  font: inherit;
+  font-size: 11px;
+}
+
+.lens-selector select:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+.lens-selector p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.narrative-reading__opening,
+.narrative-reading__section > p:not(.eyebrow) {
+  color: #c8bfb2;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.narrative-reading__opening {
+  max-width: 820px;
+  margin: 0 0 18px;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+}
+
+.narrative-reading__guide {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.narrative-reading__notice {
+  margin: 0 0 24px;
+  padding: 13px 15px;
+  border-left: 1px solid var(--gold);
+  color: #d0c4ae;
+  background: rgba(184, 154, 101, 0.07);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.narrative-reading__section {
+  margin-top: 9px;
+  border-top: 1px solid var(--line);
+}
+
+.narrative-reading__section > summary {
+  padding: 17px 4px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.narrative-reading__section > summary::-webkit-details-marker {
+  display: none;
+}
+
+.narrative-reading__section > summary::after {
+  float: right;
+  color: var(--gold);
+  content: "+";
+}
+
+.narrative-reading__section[open] > summary::after {
+  content: "−";
+}
+
+.narrative-reading__section > summary .eyebrow {
+  display: block;
+  margin: 0 0 5px;
+}
+
+.narrative-reading__section h3 {
+  margin: 0;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.narrative-reading__section[open] > summary {
+  padding-bottom: 8px;
+}
+
+.narrative-reading__section[open] > summary h3 {
+  margin-bottom: 8px;
+}
+
+.narrative-reading__section > p,
+.narrative-reading__section > ol {
+  margin-bottom: 18px;
+}
+
+.narrative-reading__section--synthesis {
+  margin-top: 20px;
+  padding: 0 18px;
+  border: 1px solid rgba(184, 154, 101, 0.48);
+  background: linear-gradient(135deg, rgba(74, 37, 44, 0.17), rgba(184, 154, 101, 0.06));
+}
+
+.narrative-reading__section--synthesis > summary {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.narrative-reading__section--synthesis h3 {
+  color: var(--ivory);
+  font-size: 32px;
+}
+
+.narrative-reading__section--synthesis > p {
+  max-width: 780px;
+  padding-bottom: 4px;
+  font-size: 13px;
+}
+
+.narrative-card-list,
+.narrative-relationship-list,
+.narrative-reflection-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.narrative-card,
+.narrative-relationship-list li,
+.narrative-reflection-list li {
+  padding: 17px;
+  border: 1px solid var(--line);
+  background: rgba(12, 12, 11, 0.27);
+}
+
+.narrative-card > details > summary,
+.narrative-relationship > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.narrative-card > details > summary::-webkit-details-marker,
+.narrative-relationship > summary::-webkit-details-marker {
+  display: none;
+}
+
+.narrative-card > details > summary::after,
+.narrative-relationship > summary::after {
+  float: right;
+  color: var(--gold);
+  content: "+";
+}
+
+.narrative-card > details[open] > summary::after,
+.narrative-relationship[open] > summary::after {
+  content: "−";
+}
+
+.narrative-card > details > summary:focus-visible,
+.narrative-relationship > summary:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.narrative-card__position {
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.narrative-card h4 {
+  margin: 0 0 8px;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.narrative-card__content {
+  margin-top: 12px;
+}
+
+.narrative-card__content > p {
+  margin: 0 0 9px;
+  color: #c8bfb2;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.narrative-card__dimension strong {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.narrative-card__content blockquote {
+  margin: 12px 0 0;
+  padding-left: 13px;
+  border-left: 1px solid var(--gold);
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.narrative-relationship-list li,
+.narrative-reflection-list li {
+  color: #c8bfb2;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.narrative-relationship-list p {
+  margin: 0;
+}
+
+.narrative-relationship > summary {
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.narrative-relationship > p {
+  margin-top: 10px;
+  color: #c8bfb2;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.narrative-provider-experiment {
+  margin-top: 28px;
+  padding: 0 16px;
+  border: 1px dashed var(--gold);
+  background: rgba(184, 154, 101, 0.035);
+}
+
+.narrative-provider-experiment > summary {
+  padding: 16px 0;
+  color: var(--gold-bright);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.narrative-provider-experiment__content {
+  padding-bottom: 18px;
+}
+
+.narrative-provider-experiment__content > p {
+  max-width: 820px;
+  color: #c8bfb2;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.narrative-provider-experiment__content > .narrative-provider-experiment__status {
+  color: var(--gold-bright);
+}
+
+.narrative-provider-experiment__content > .narrative-provider-experiment__warning {
+  padding: 10px 12px;
+  border-left: 2px solid var(--gold);
+  background: rgba(184, 154, 101, 0.07);
+}
+
+.narrative-provider-experiment__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  max-width: 760px;
+  margin: 16px 0;
+  color: #ded5c9;
+  font-size: 11px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.narrative-provider-experiment__consent input {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
+  accent-color: var(--gold-bright);
+}
+
+.narrative-provider-experiment__consent input:focus-visible,
+.narrative-provider-experiment > summary:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.narrative-provider-experiment button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.narrative-provider-experiment__comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.narrative-provider-experiment__comparison > section {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+}
+
+.narrative-provider-experiment__comparison > section > h3 {
+  margin: 0 0 14px;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.narrative-provider-experiment__comparison .narrative-reading__opening {
+  font-size: 15px;
+}
+
+.narrative-provider-experiment__comparison .narrative-reading__section h3 {
+  font-size: 21px;
+}
+
+.narrative-provider-experiment__comparison .narrative-card,
+.narrative-provider-experiment__comparison .narrative-relationship-list li {
+  padding: 11px;
+}
+
+.symbolic-reading-details {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.symbolic-reading-details summary {
+  padding: 16px 0;
+  color: var(--gold-bright);
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.symbolic-reading-details[open] > .symbolic-reading {
+  margin-top: 0;
+}
+
+.symbolic-reading__section > .eyebrow {
+  margin-bottom: 8px;
+}
+
+.symbolic-reading__section h3 {
+  margin: 0 0 9px;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.symbolic-reading__intro {
+  max-width: 720px;
+  color: #b7afa3;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.symbolic-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.symbolic-card {
+  padding: 17px;
+  border: 1px solid var(--line);
+  background: rgba(12, 12, 11, 0.27);
+}
+
+.symbolic-card__position,
+.symbolic-relationship-list__meta {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.symbolic-card h4,
+.symbolic-reflection h4 {
+  margin: 0 0 8px;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.symbolic-card__position-meaning {
+  color: #aaa195;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.symbolic-card__details {
+  display: grid;
+  gap: 9px;
+  margin: 15px 0 0;
+}
+
+.symbolic-card__details dt {
+  margin-bottom: 3px;
+  color: var(--gold);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.symbolic-card__details dd {
+  margin: 0;
+  color: #c8bfb2;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.symbolic-relationship-list,
+.symbolic-movement-list {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.symbolic-relationship-list > li,
+.symbolic-movement-list > li,
+.symbolic-reflection {
+  padding: 14px 16px;
+  border-left: 1px solid var(--gold);
+  background: rgba(184, 154, 101, 0.045);
+}
+
+.symbolic-relationship-list__cards {
+  margin: 0 0 4px;
+  color: var(--ivory);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+}
+
+.symbolic-relationship-list__cards span {
+  color: var(--gold);
+}
+
+.symbolic-relationship-list ul,
+.symbolic-reflection ul {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding-left: 17px;
+  color: #b7afa3;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.symbolic-movement-list > li {
+  color: #c8bfb2;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.symbolic-reflection {
+  margin-top: 16px;
+}
+
+.symbolic-reflection h4 {
+  font-size: 19px;
+}
+
+.reading-section {
+  margin: 72px auto 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.draw-count {
+  padding-bottom: 5px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.reading-empty {
+  display: flex;
+  min-height: 175px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(213, 190, 143, 0.2);
+  color: var(--muted);
+  text-align: center;
+}
+
+.reading-empty__mark {
+  margin-bottom: 11px;
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.reading-empty p {
+  margin-bottom: 5px;
+  color: #d3cabb;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 20px;
+}
+
+.reading-empty > span:last-child {
+  font-size: 10px;
+}
+
+.reading-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 17px;
+}
+
+.arcana-card {
+  min-height: 285px;
+  padding: 9px;
+  border: 1px solid rgba(213, 190, 143, 0.35);
+  background: linear-gradient(155deg, #25211c, #151413 76%);
+  animation: reveal 480ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.arcana-card:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.arcana-card:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.arcana-card:nth-child(4) {
+  animation-delay: 300ms;
+}
+
+.arcana-card:nth-child(5) {
+  animation-delay: 400ms;
+}
+
+.arcana-card__frame {
+  display: flex;
+  min-height: 265px;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 10px 14px;
+  border: 1px solid rgba(213, 190, 143, 0.16);
+  text-align: center;
+}
+
+.arcana-card__position,
+.arcana-card__stage {
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.arcana-card__numeral {
+  align-self: flex-end;
+  min-height: 18px;
+  color: var(--gold-bright);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px;
+}
+
+.arcana-card__sigil {
+  display: grid;
+  width: 88px;
+  height: 88px;
+  place-items: center;
+  margin: 10px 0 12px;
+  border: 1px solid rgba(212, 187, 135, 0.53);
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+.arcana-card__sigil span {
+  width: 49px;
+  height: 49px;
+  border: 1px solid rgba(212, 187, 135, 0.47);
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba(212, 187, 135, 0.04), 0 0 0 15px rgba(212, 187, 135, 0.04);
+}
+
+.arcana-card__stage {
+  margin: 0 0 7px;
+  color: var(--gold);
+  font-size: 7px;
+}
+
+.arcana-card h3 {
+  margin: 0 0 8px;
+  font-size: 24px;
+}
+
+.arcana-card__core {
+  max-width: 180px;
+  margin: 0;
+  color: #aaa195;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.site-footer {
+  margin-top: 82px;
+  padding: 20px 0 30px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.site-footer > span {
+  font-size: 8px;
+}
+
+.site-footer p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(13px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 32px, 520px);
+  }
+
+  .site-header {
+    min-height: 70px;
+  }
+
+  .header-note {
+    max-width: 115px;
+    font-size: 7px;
+    text-align: right;
+  }
+
+  .intro {
+    padding: 69px 0 42px;
+  }
+
+  .intro__copy {
+    max-width: 335px;
+    font-size: 12px;
+  }
+
+  .ritual-panel {
+    padding: 22px 18px;
+  }
+
+  .ritual-panel__controls {
+    align-items: stretch;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .question-form {
+    margin-left: 0;
+  }
+
+  .count-picker__option {
+    flex: 1;
+  }
+
+  .draw-button {
+    width: 100%;
+  }
+
+  .error-message {
+    margin-left: 0;
+  }
+
+  .recommendation-panel,
+  .manual-spreads,
+  .confirmed-spread {
+    padding: 21px 17px;
+  }
+
+  .recommendation-panel__top,
+  .manual-spreads__heading {
+    align-items: flex-start;
+  }
+
+  .confidence-badge {
+    max-width: 105px;
+    font-size: 8px;
+    line-height: 1.5;
+  }
+
+  .analysis-summary {
+    gap: 14px;
+  }
+
+  .spread-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .spread-preview__layout {
+    min-height: 190px;
+  }
+
+  .manual-spreads__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manual-spread-card {
+    min-height: 160px;
+  }
+
+  .confirmed-spread .section-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .confirmed-context > p:last-child {
+    font-size: 18px;
+  }
+
+  .ritual-preparation,
+  .spread-reveal,
+  .reading-summary {
+    padding: 22px 16px;
+  }
+
+  .ritual-preparation blockquote {
+    font-size: 20px;
+  }
+
+  .ritual-spread-info {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ritual-spread-info ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .spread-reveal .section-heading {
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .spread-reveal .section-heading h2 {
+    font-size: 25px;
+  }
+
+  .tarot-table {
+    aspect-ratio: 0.92;
+    min-height: 380px;
+  }
+
+  .tarot-slot {
+    width: clamp(57px, 19vw, 80px);
+  }
+
+  .tarot-slot__caption {
+    max-width: 95px;
+    font-size: 6px;
+  }
+
+  .tarot-card__front-position {
+    font-size: 6px;
+  }
+
+  .tarot-card__front h3 {
+    font-size: 12px;
+  }
+
+  .tarot-card__front p {
+    font-size: 7px;
+  }
+
+  .reading-summary__list {
+    grid-template-columns: 1fr;
+  }
+
+  .reading-section {
+    margin-top: 54px;
+  }
+
+  .reading-grid {
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 11px;
+  }
+
+  .arcana-card {
+    min-height: 260px;
+    padding: 6px;
+  }
+
+  .arcana-card__frame {
+    min-height: 242px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .tarot-slot.is-revealed .tarot-card__inner {
+    transform: none;
+  }
+
+  .tarot-slot:not(.is-revealed) .tarot-card__front {
+    opacity: 0;
+  }
+
+  .tarot-slot.is-revealed .tarot-card__back {
+    opacity: 0;
+  }
+
+  .tarot-slot.is-revealed .tarot-card__front {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ARCANA identity layer: shared emblem, frame, palette, and ritual surfaces. */
+.wordmark {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.27em;
+}
+
+.wordmark__symbol {
+  display: block;
+  width: 28px;
+  height: 28px;
+  color: var(--color-gold);
+}
+
+.arcana-emblem {
+  display: block;
+  overflow: visible;
+  color: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.arcana-emblem circle:last-child {
+  fill: currentColor;
+  stroke: none;
+}
+
+.ritual-panel,
+.recommendation-panel,
+.manual-spreads,
+.confirmed-spread,
+.ritual-preparation,
+.spread-reveal,
+.reading-summary {
+  border-color: var(--color-line);
+  box-shadow: var(--shadow-ritual);
+}
+
+.ritual-preparation,
+.spread-reveal {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 16%, rgba(75, 35, 48, 0.22), transparent 31rem),
+    linear-gradient(145deg, rgba(19, 29, 37, 0.96), rgba(13, 18, 24, 0.97));
+}
+
+.ritual-preparation__emblem {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 18px;
+  color: var(--color-gold-soft);
+  stroke-width: 0.9;
+}
+
+.narrative-provider-experiment__comparison {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.ritual-preparation > h2,
+.reading-summary > h2,
+.section-heading h2,
+.ritual-panel h2,
+.arcana-card h3 {
+  font-family: var(--font-display);
+}
+
+.ritual-preparation blockquote,
+.ritual-preparation > h2 {
+  color: var(--color-ivory);
+}
+
+.ritual-preparation blockquote {
+  color: var(--color-gold-bright);
+}
+
+.ritual-spread-info {
+  border-color: var(--color-line);
+}
+
+.shuffle-state__seal {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 8px;
+  color: var(--color-gold);
+  stroke-width: 1;
+  animation: seal-breathe 3.2s ease-in-out infinite;
+}
+
+.tarot-table {
+  border-color: rgba(213, 190, 143, 0.27);
+  background:
+    radial-gradient(ellipse at center, rgba(92, 42, 55, 0.18), transparent 62%),
+    linear-gradient(145deg, #0d1921, #171219 75%);
+}
+
+.tarot-table::before {
+  inset: 5%;
+  border-color: rgba(212, 187, 135, 0.14);
+  border-radius: 0;
+}
+
+.tarot-table::after {
+  inset: 10%;
+  border-color: rgba(212, 187, 135, 0.11);
+  border-radius: 0;
+  transform: rotate(45deg) scale(0.72);
+}
+
+.tarot-card__back {
+  padding: 5px;
+  border-color: var(--color-gold);
+  background: linear-gradient(155deg, #121c23, #2b1721 60%, #11171d);
+}
+
+.tarot-card__back-inset {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  border: 1px solid rgba(213, 190, 143, 0.23);
+}
+
+.tarot-card__back-inset::before {
+  position: absolute;
+  width: 78%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(213, 190, 143, 0.26);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.tarot-card__back-emblem {
+  z-index: 1;
+  width: 68%;
+  color: var(--color-gold-bright);
+  stroke-width: 0.85;
+}
+
+.tarot-card__front {
+  display: block;
+  padding: 5px;
+  background: linear-gradient(155deg, #211b19, #101820);
+}
+
+.tarot-slot[data-state="next"] .tarot-card__back {
+  border-color: var(--color-gold-bright);
+  box-shadow: 0 0 0 2px rgba(213, 190, 143, 0.12);
+}
+
+.tarot-slot[data-state="next"] .tarot-card__back-emblem {
+  animation: none;
+}
+
+.tarot-slot__trigger:hover + .tarot-slot__caption {
+  color: var(--color-focus);
+}
+
+.tarot-slot__trigger:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 5px;
+}
+
+.card-frame {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 7% 7% 5%;
+  border: 1px solid rgba(213, 190, 143, 0.28);
+  color: var(--color-ivory);
+  text-align: center;
+}
+
+.card-frame::before {
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(213, 190, 143, 0.12);
+  content: "";
+  pointer-events: none;
+}
+
+.card-frame__position {
+  z-index: 1;
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--color-warm-gray);
+  font-family: var(--font-body);
+  font-size: clamp(6px, 0.72vw, 9px);
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.card-frame__numeral {
+  align-self: flex-end;
+  margin-top: 2px;
+  color: var(--color-gold-bright);
+  font-family: var(--font-display);
+  font-size: clamp(13px, 1.7vw, 21px);
+  line-height: 1;
+}
+
+.card-frame__art {
+  display: grid;
+  width: min(56%, 130px);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  place-items: center;
+  margin: auto 0 5%;
+  border: 1px solid rgba(213, 190, 143, 0.35);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(181, 154, 104, 0.08), transparent 68%),
+    linear-gradient(45deg, transparent 49.5%, rgba(213, 190, 143, 0.08) 50%, transparent 50.5%);
+}
+
+.card-frame__art--illustrated {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: auto;
+  flex: 1 1 auto;
+  margin: 6px 0 2px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.card-frame__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-frame--reveal .card-frame__image,
+.card-frame--summary .card-frame__image {
+  object-fit: cover;
+  object-position: center 47%;
+}
+
+.card-frame__stage {
+  margin: 0 0 3px;
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: clamp(6px, 0.68vw, 8px);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.card-frame__name {
+  z-index: 1;
+  max-width: 100%;
+  margin: 0;
+  color: var(--color-ivory);
+  font-family: var(--font-display);
+  font-size: clamp(13px, 1.5vw, 20px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.card-frame__description {
+  display: -webkit-box;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 3px 0 0;
+  color: #c5bdaf;
+  font-family: var(--font-body);
+  font-size: clamp(7px, 0.8vw, 10px);
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.card-frame__foot-mark {
+  position: absolute;
+  bottom: 2.5%;
+  color: var(--color-gold);
+  font-size: 8px;
+  line-height: 1;
+}
+
+.card-frame--reveal {
+  padding: 7% 6% 5%;
+}
+
+.card-frame--reveal .card-frame__art {
+  width: 48%;
+  margin-top: auto;
+}
+
+.card-frame--reveal .card-frame__art--illustrated {
+  width: 100%;
+  margin: 4px 0 1px;
+}
+
+.card-frame--reveal .card-frame__name {
+  font-size: clamp(12px, 1.35vw, 18px);
+}
+
+.card-frame--summary {
+  min-height: 265px;
+  padding: 14px 10px 18px;
+}
+
+.card-frame--summary .card-frame__position {
+  align-self: flex-start;
+  font-size: 8px;
+}
+
+.card-frame--summary .card-frame__numeral {
+  font-size: 17px;
+}
+
+.card-frame--summary .card-frame__art {
+  width: 92px;
+  margin: auto 0 12px;
+}
+
+.card-frame--summary .card-frame__art--illustrated {
+  width: 100%;
+  margin: 5px 0 2px;
+}
+
+.card-frame--summary .card-frame__stage {
+  margin-bottom: 7px;
+  font-size: 8px;
+}
+
+.card-frame--summary .card-frame__name {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.card-frame--summary .card-frame__description {
+  max-width: 190px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.reading-empty__mark {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 11px;
+  color: var(--color-gold-soft);
+}
+
+.draw-button {
+  border-color: var(--color-gold);
+  color: #11130f;
+  background: var(--color-gold-bright);
+}
+
+.draw-button:hover {
+  background: #ead9b3;
+}
+
+.site-footer {
+  border-color: var(--color-line);
+}
+
+@keyframes seal-breathe {
+  from {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 640px) {
+  .ritual-preparation,
+  .spread-reveal {
+    padding: 22px 14px;
+  }
+
+  .ritual-preparation__emblem {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 14px;
+  }
+
+  .tarot-table {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 34px 8px;
+    width: 100%;
+    min-height: 0;
+    aspect-ratio: auto;
+    padding: 17px 10px 23px;
+    overflow: visible;
+    border-color: rgba(213, 190, 143, 0.2);
+  }
+
+  .tarot-table::before,
+  .tarot-table::after {
+    display: none;
+  }
+
+  .tarot-slot {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+    max-width: 92px;
+    justify-self: center;
+    aspect-ratio: 0.68;
+    transform: none;
+  }
+
+  .tarot-table:has(.tarot-slot:nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+  }
+
+  .tarot-slot__caption {
+    top: calc(100% + 6px);
+    max-width: 100%;
+    color: #d0c7b9;
+    font-size: 8px;
+    line-height: 1.3;
+  }
+
+  .card-frame__position {
+    font-size: 6px;
+  }
+
+  .card-frame__numeral {
+    font-size: 14px;
+  }
+
+  .card-frame__name,
+  .card-frame--reveal .card-frame__name {
+    font-size: 12px;
+  }
+
+  .card-frame__description {
+    font-size: 7px;
+  }
+
+  .card-frame--summary .card-frame__art--illustrated {
+    min-height: 105px;
+  }
+
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .tarot-slot {
+    width: clamp(74px, 12vw, 100px);
+  }
+
+  .card-frame__position {
+    font-size: 7px;
+  }
+}

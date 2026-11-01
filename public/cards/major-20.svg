@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Juicio — llamada y reconocimiento</title><desc id="d">Una vibración asciende en espiral por tres niveles de experiencia y alcanza una puerta abierta, sin borrar los rastros del recorrido.</desc>
+  <defs>
+    <linearGradient id="levels" x2="0" y2="1"><stop stop-color="#111a22"/><stop offset=".68" stop-color="#292d31"/><stop offset="1" stop-color="#171b1d"/></linearGradient>
+    <linearGradient id="door" x2="0" y2="1"><stop stop-color="#ddcda7" stop-opacity=".62"/><stop offset="1" stop-color="#b9a47b" stop-opacity=".04"/></linearGradient>
+    <radialGradient id="call"><stop stop-color="#d9c697" stop-opacity=".25"/><stop offset="1" stop-color="#d9c697" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#levels)"/>
+  <path d="M40 446h320M66 343h268M91 241h218" stroke="#917b56" stroke-opacity=".45" stroke-width="2"/>
+  <path d="M62 446v-33h276v33M87 343v-33h226v33M112 241v-33h176v33" fill="none" stroke="#7f7157" stroke-opacity=".36"/>
+  <path d="M161 208V91a39 39 0 0 1 78 0v117Z" fill="url(#door)" stroke="#b49b6a" stroke-opacity=".62" stroke-width="2"/>
+  <path d="M200 207V86" stroke="#e0d1ad" stroke-opacity=".28" stroke-width="2"/>
+  <ellipse cx="200" cy="174" rx="112" ry="105" fill="url(#call)"/>
+  <path d="M63 454c31-4 51-20 52-43 2-29 30-43 57-35 28 8 28 38 2 45-22 6-38-10-27-25 9-12 27-11 34 2 10 18 28 25 47 14 23-13 17-44-8-50-17-4-32 3-39 15" fill="none" stroke="#c8b07b" stroke-width="4"/>
+  <path d="M105 375c9-14 19-21 34-24m-52 65c-16 5-26 4-39 0" fill="none" stroke="#87929a" stroke-opacity=".44" stroke-width="2"/>
+  <circle cx="132" cy="277" r="17" fill="none" stroke="#c4ae7c" stroke-opacity=".64" stroke-width="2"/>
+  <circle cx="200" cy="277" r="17" fill="none" stroke="#c4ae7c" stroke-opacity=".64" stroke-width="2"/>
+  <circle cx="268" cy="277" r="17" fill="none" stroke="#c4ae7c" stroke-opacity=".64" stroke-width="2"/>
+  <path d="M115 277h17m51 0h17m51 0h17" stroke="#c4ae7c" stroke-opacity=".34"/>
+  <path d="M110 357c11-30 24-39 40-35m100-1c17-3 30 9 39 35" fill="none" stroke="#9f9070" stroke-width="3"/>
+  <path d="M124 322v35m-8-26 8-9 8 9m132-9 9 9-9 9" fill="none" stroke="#a89265" stroke-width="2"/>
+  <path d="M227 135h36" stroke="#d8c69b" stroke-opacity=".48" stroke-width="2"/>
+</svg>

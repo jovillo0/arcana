@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Ermitaño — discernimiento interior</title><desc id="d">Una pausa junto a una ladera oscura deja que una lámpara pequeña alumbre solo el siguiente tramo del camino.</desc>
+  <defs>
+    <linearGradient id="mountain" x2="0" y2="1"><stop stop-color="#101923"/><stop offset=".6" stop-color="#263037"/><stop offset="1" stop-color="#151b1f"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#d2b477" stop-opacity=".55"/><stop offset=".35" stop-color="#d2b477" stop-opacity=".14"/><stop offset="1" stop-color="#d2b477" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#mountain)"/>
+  <path d="m-30 413 95-125 59 45 93-175 62 85 74-105 77 160v262H-30Z" fill="#202a30"/>
+  <path d="m124 333 93-175 62 85m15-35 59-75" fill="none" stroke="#71808a" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M0 470c81-68 130-94 197-115 70-21 132-66 203-145" fill="none" stroke="#51483a" stroke-width="19" stroke-opacity=".75"/>
+  <path d="M0 470c81-68 130-94 197-115 70-21 132-66 203-145" fill="none" stroke="#ba9f6b" stroke-opacity=".31" stroke-width="1.5"/>
+  <ellipse cx="205" cy="326" rx="125" ry="126" fill="url(#glow)"/>
+  <path d="M157 420c-2-43 3-76 18-105l33-13 24 17 11 83-12 30h-59Z" fill="#182026" stroke="#8d7a5a" stroke-opacity=".45"/>
+  <path d="m174 321 22-24 20 3 14 31-21 24-29-8Z" fill="#303638"/>
+  <path d="m221 331 8-7 14 3 6 13-6 12-14 2-8-9Z" fill="#262525" stroke="#b59a68" stroke-width="1.5"/>
+  <path d="M235 332v-11" stroke="#b59a68" stroke-width="2"/>
+  <path d="M235 321a3 3 0 1 1 .1 0" fill="#edce8f"/>
+  <path d="m82 453 15-5 11 3 11-6" fill="none" stroke="#d2c5a4" stroke-opacity=".56"/>
+  <path d="m117 446 11-4 8 2" fill="none" stroke="#c1b28c" stroke-opacity=".34"/>
+  <path d="m221 331 8-7 14 3 6 13-6 12-14 2-8-9Z" fill="none" stroke="#b59a68" stroke-opacity=".62" stroke-dasharray="18 5 6 5"/>
+</svg>

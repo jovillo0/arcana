@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Mago — voluntad en acto</title><desc id="d">Una mesa de trabajo reúne piedra, agua, hoja y brasa; una vara vertical concentra el espacio en un punto de acción.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#0c151e"/><stop offset=".7" stop-color="#202326"/><stop offset="1" stop-color="#382a29"/></linearGradient>
+    <linearGradient id="wood" x2=".8" y2="1"><stop stop-color="#514034"/><stop offset="1" stop-color="#1a2022"/></linearGradient>
+    <radialGradient id="work"><stop stop-color="#d2b67d" stop-opacity=".55"/><stop offset="1" stop-color="#d2b67d" stop-opacity="0"/></radialGradient>
+    <pattern id="grain" width="28" height="28" patternUnits="userSpaceOnUse"><path d="m4 8 5-1m13 12 4-2" stroke="#c9b68e" stroke-opacity=".12"/></pattern>
+  </defs>
+  <rect width="400" height="560" fill="url(#sky)"/>
+  <path d="M48 287V145h304v142M62 272V158h276v114" fill="none" stroke="#9c8760" stroke-opacity=".25" stroke-width="1"/>
+  <circle cx="200" cy="213" r="111" fill="none" stroke="#b59a68" stroke-opacity=".25"/>
+  <path d="M0 315 62 286h276l62 29v245H0Z" fill="#191f22"/>
+  <path d="M41 390 200 320l159 70-159 57Z" fill="url(#wood)" stroke="#b59a68" stroke-opacity=".5"/>
+  <path d="M41 390v78l159 63v-84m159-57v78l-159 63" fill="#272526" stroke="#806f50" stroke-opacity=".45"/>
+  <ellipse cx="200" cy="391" rx="93" ry="54" fill="url(#work)"/>
+  <path d="M200 388V134" stroke="#c4a970" stroke-width="5" stroke-opacity=".76"/>
+  <circle cx="200" cy="139" r="8" fill="#e4d5b5"/>
+  <path d="M185 387 170 360l23-14 17 17Zm51 7c-5-17 2-27 20-28 13 16 8 27-20 28Zm-84 14c12-10 26-10 38 0-9 12-24 14-38 0Z" fill="#58625b" stroke="#b59a68" stroke-opacity=".5"/>
+  <path d="M239 378c15-5 25 2 30 13-15 10-26 6-30-13Z" fill="#8b4937"/>
+  <path d="M182 422c13 7 25 7 37-1" fill="none" stroke="#dbc596" stroke-width="1.5"/>
+  <path d="M200 321v68m-18-26 18 26 19-28" fill="none" stroke="#e1d2ad" stroke-opacity=".45"/>
+  <rect width="400" height="560" fill="url(#grain)"/>
+</svg>

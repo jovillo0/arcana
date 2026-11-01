@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Colgado — perspectiva en suspensión</title><desc id="d">Una figura serena y un árbol invertido se reflejan sobre agua inmóvil que vuelve incierto qué está arriba y abajo.</desc>
+  <defs>
+    <linearGradient id="still" x2="0" y2="1"><stop stop-color="#101a22"/><stop offset=".48" stop-color="#233139"/><stop offset=".49" stop-color="#17272b"/><stop offset="1" stop-color="#101b20"/></linearGradient>
+    <radialGradient id="underlight"><stop stop-color="#a6b2a6" stop-opacity=".3"/><stop offset="1" stop-color="#a6b2a6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#still)"/>
+  <path d="M0 280h400" stroke="#879495" stroke-opacity=".32"/>
+  <ellipse cx="205" cy="343" rx="156" ry="152" fill="url(#underlight)"/>
+  <path d="M200 73v116m0 0-64 73m64-73 69 65m-69-65-43-74m43 74 47-95m-47 95 4-124" fill="none" stroke="#85714d" stroke-width="9" stroke-linecap="round"/>
+  <path d="m139 184-24-25 39 5m113 4 29-23-9 41m-69-73-1-36 21 29" fill="none" stroke="#778568" stroke-width="15" stroke-linecap="round"/>
+  <g transform="rotate(180 200 210)">
+    <path d="M190 176c-28 12-33 37-22 59l32 22 31-27-6-38Z" fill="#283036" stroke="#aa9467" stroke-opacity=".56"/>
+    <circle cx="199" cy="169" r="11" fill="#3f4440"/>
+    <path d="m184 209-42 28m75-26 42 27m-81 2-18 38m70-41 25 35" stroke="#a7a08b" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <path d="M185 279c-20 26-27 56-16 80 18-14 27-40 16-80Zm27 2c20 24 26 52 15 77-18-14-24-40-15-77Z" fill="#546b5c" fill-opacity=".58"/>
+  <path d="M15 298c75 10 128 6 184-4 66-11 125-5 188 7m-349 34c54 8 106 2 157-6 57-9 111-8 192 6m-320 37c72-4 123-12 184-8 52 3 91 12 136 14" fill="none" stroke="#96a9a5" stroke-opacity=".24" stroke-width="2"/>
+  <path d="M194 315v19m-8-8 9 9 10-9" stroke="#d7ccb1" stroke-opacity=".45"/>
+  <path d="M268 102c-6 8-7 16-1 24" fill="none" stroke="#859076" stroke-width="7"/>
+</svg>

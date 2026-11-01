@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Sumo Sacerdote — conocimiento transmitido</title><desc id="d">Un arco de piedra abierto encuadra una escalera hacia cinco lámparas distintas; un libro y una llave esperan en primer plano.</desc>
+  <defs>
+    <linearGradient id="hall" x2="0" y2="1"><stop stop-color="#101820"/><stop offset=".5" stop-color="#302b29"/><stop offset="1" stop-color="#171e22"/></linearGradient>
+    <radialGradient id="lamp"><stop stop-color="#e3c88e" stop-opacity=".55"/><stop offset="1" stop-color="#d2a65e" stop-opacity="0"/></radialGradient>
+    <linearGradient id="book" x2="0" y2="1"><stop stop-color="#64513e"/><stop offset="1" stop-color="#292525"/></linearGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#hall)"/>
+  <path d="M37 450V189a163 163 0 0 1 326 0v261" fill="none" stroke="#806f50" stroke-width="16" stroke-opacity=".47"/>
+  <path d="M71 449V191a129 129 0 0 1 258 0v258" fill="#10191e" fill-opacity=".58" stroke="#b59a68" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M117 441h166v-21H117Zm18-21h130v-23H135Zm19-23h92v-25h-92Zm15-25h62v-26h-62Z" fill="#4a4035" stroke="#a1885e" stroke-opacity=".48"/>
+  <g fill="url(#lamp)">
+    <circle cx="136" cy="330" r="37"/><circle cx="168" cy="297" r="37"/><circle cx="200" cy="280" r="37"/><circle cx="232" cy="297" r="37"/><circle cx="264" cy="330" r="37"/>
+  </g>
+  <g fill="#d6bd88"><circle cx="136" cy="330" r="3"/><circle cx="168" cy="297" r="3.4"/><circle cx="200" cy="280" r="4"/><circle cx="232" cy="297" r="3.4"/></g>
+  <path d="M196 403 200 382l4 21m-59-1-8 20m122-20 9 20" stroke="#b59a68" stroke-opacity=".5"/>
+  <path d="m80 453 60-18 64 14-58 23Z" fill="url(#book)" stroke="#c0a878" stroke-opacity=".56"/>
+  <path d="m146 472 58-23v12l-58 24Z" fill="#211f20" stroke="#806f50" stroke-opacity=".5"/>
+  <path d="M284 447a13 13 0 1 0 0 1m0-1 18-16m-12 10h8m-14-1 9 7" fill="none" stroke="#cfb578" stroke-width="2"/>
+  <path d="M61 459h280" stroke="#9a8359" stroke-opacity=".35"/>
+</svg>

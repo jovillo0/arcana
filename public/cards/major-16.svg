@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">La Torre — estructura revelada</title><desc id="d">Una arquitectura de piedra se abre por una grieta precisa; un destello revela una cámara interior que antes estaba oculta.</desc>
+  <defs>
+    <linearGradient id="storm" x2="0" y2="1"><stop stop-color="#121a24"/><stop offset=".56" stop-color="#262933"/><stop offset="1" stop-color="#171b1e"/></linearGradient>
+    <linearGradient id="inside" x2="0" y2="1"><stop stop-color="#e1c99a" stop-opacity=".7"/><stop offset="1" stop-color="#937b54" stop-opacity=".14"/></linearGradient>
+    <pattern id="blocks" width="68" height="41" patternUnits="userSpaceOnUse"><path d="M0 1h68M33 1v19M0 21h68M54 21v20" fill="none" stroke="#b0a187" stroke-opacity=".13"/></pattern>
+  </defs>
+  <rect width="400" height="560" fill="url(#storm)"/>
+  <path d="M64 470V155l52-34h168l52 34v315Z" fill="#343334" stroke="#9b8762" stroke-opacity=".66" stroke-width="2"/>
+  <path d="M64 470V155l52-34h168l52 34v315Z" fill="url(#blocks)"/>
+  <path d="M226 135h58l52 20v315h-109l-18-81 28-63-34-71 31-56-29-64Z" fill="url(#inside)" stroke="#d5bd8d" stroke-opacity=".5"/>
+  <path d="m218 94 14 28-23 22 25 30-18 28 22 27-29 38 18 23-25 37 17 27-21 39" fill="none" stroke="#c6b17f" stroke-width="4"/>
+  <path d="M229 120 195 31l17 52-55-27 65 48 67-33-54 44" fill="none" stroke="#c8d0d0" stroke-opacity=".76" stroke-width="3"/>
+  <path d="m102 119 98-22 98 22" fill="none" stroke="#a4916b" stroke-width="12"/>
+  <path d="m105 124 39-9 36 13-41 13Zm123 7 42-15 20 19-41 16Z" fill="#2c2c2e" stroke="#b49b6d" stroke-opacity=".65"/>
+  <path d="M44 490h309" stroke="#a28b61" stroke-opacity=".36" stroke-width="2"/>
+  <path d="m81 490 18-10 14 5 21-8m117 9 22-6 16 8" fill="none" stroke="#79736b" stroke-width="5"/>
+  <path d="M200 187h18m-18 34h18m-18 35h18m-18 35h18" stroke="#f0d5a0" stroke-opacity=".45" stroke-width="2"/>
+</svg>

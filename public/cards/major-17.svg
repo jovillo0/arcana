@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">La Estrella — orientación después de la ruptura</title><desc id="d">Una estrella discreta reaparece sobre un horizonte amplio y su reflejo fragmentado orienta el agua sin prometer un destino.</desc>
+  <defs>
+    <linearGradient id="afterstorm" x2="0" y2="1"><stop stop-color="#131c27"/><stop offset=".52" stop-color="#26353b"/><stop offset="1" stop-color="#152126"/></linearGradient>
+    <radialGradient id="starwash"><stop stop-color="#d9d3b7" stop-opacity=".21"/><stop offset="1" stop-color="#d9d3b7" stop-opacity="0"/></radialGradient>
+    <linearGradient id="water" x2="0" y2="1"><stop stop-color="#536d6a" stop-opacity=".5"/><stop offset="1" stop-color="#182729" stop-opacity=".2"/></linearGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#afterstorm)"/>
+  <ellipse cx="269" cy="198" rx="130" ry="115" fill="url(#starwash)"/>
+  <path d="M0 310c66-11 117-8 180 0 77 10 147 4 220-12v262H0Z" fill="url(#water)"/>
+  <path d="M0 304c58-12 111-7 168-2 83 8 156 2 232-12" fill="none" stroke="#a9aaa0" stroke-opacity=".4" stroke-width="2"/>
+  <path d="m270 123 11 34 35-5-28 23 18 31-34-17-23 27 7-36-34-12 35-8Z" fill="#c8c8b0" fill-opacity=".82" stroke="#ded7bd" stroke-opacity=".6"/>
+  <path d="m270 139 8 26 26-4-21 18 13 23-25-13-17 20 5-27-25-9 26-6Z" fill="none" stroke="#26333a" stroke-opacity=".7"/>
+  <path d="m270 336 8 20 20-4-16 13 9 19-19-10-14 15 4-20-19-6 20-5Z" fill="none" stroke="#d1c8a9" stroke-opacity=".53" stroke-width="2"/>
+  <path d="M222 319c32 7 63 9 99 4m-110 30c44 8 87 5 128-1m-146 33c54 3 94 1 143-4m-152 36c50-1 91-5 140-8" fill="none" stroke="#aab3aa" stroke-opacity=".3" stroke-width="2"/>
+  <path d="M124 433c15-39 25-69 35-105l28-30 20 38-13 67 15 35Z" fill="#182125" stroke="#8b8e84" stroke-opacity=".5"/>
+  <circle cx="174" cy="283" r="12" fill="#293236"/>
+  <path d="m44 391 19-20 28 4 19 24-15 18-42-2Z" fill="#35383a"/>
+  <path d="m52 392 15-16 20 2 7 10-18 4-8 15" fill="none" stroke="#827b6c" stroke-opacity=".7" stroke-width="2"/>
+  <path d="M62 420c35 0 50-5 75-18" fill="none" stroke="#94aca5" stroke-opacity=".4" stroke-width="2"/>
+</svg>

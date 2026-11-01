@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">La Rueda de la Fortuna — cambio cíclico</title><desc id="d">Una rueda de cuatro climas recorre una doble espiral y deja una interrupción, donde un ciclo puede variar.</desc>
+  <defs>
+    <linearGradient id="cycle" x2="0" y2="1"><stop stop-color="#111a21"/><stop offset=".57" stop-color="#29312f"/><stop offset="1" stop-color="#191e20"/></linearGradient>
+    <clipPath id="disc"><circle cx="200" cy="283" r="130"/></clipPath>
+  </defs>
+  <rect width="400" height="560" fill="url(#cycle)"/>
+  <circle cx="200" cy="283" r="146" fill="none" stroke="#a88e5f" stroke-opacity=".37"/>
+  <circle cx="200" cy="283" r="130" fill="#1a2224" stroke="#c1a775" stroke-opacity=".65" stroke-width="2"/>
+  <g clip-path="url(#disc)">
+    <path d="M200 153v260M70 283h260M108 191l184 184m0-184L108 375" stroke="#9b885f" stroke-opacity=".3"/>
+    <path d="M200 153a130 130 0 0 1 130 130h-130Zm130 130a130 130 0 0 1-130 130V283ZM200 413A130 130 0 0 1 70 283h130ZM70 283a130 130 0 0 1 130-130v130Z" fill="#78684a" fill-opacity=".13"/>
+    <path d="M200 153a130 130 0 0 1 130 130h-130Zm0 260a130 130 0 0 1-130-130h130Z" fill="#6e7861" fill-opacity=".17"/>
+    <path d="M200 191c-56 0-101 41-101 92s45 93 101 93 101-42 101-93-45-92-101-92c-39 0-71 28-71 63s32 64 71 64 71-29 71-64-32-63-71-63" fill="none" stroke="#c5ae7c" stroke-opacity=".61" stroke-width="2"/>
+  </g>
+  <circle cx="200" cy="283" r="7" fill="#d6c59f"/>
+  <path d="M200 283V155m0 128h128" stroke="#d4c39e" stroke-opacity=".34"/>
+  <path d="m49 457 37 19 17-8 22 16m189-294-5-18m-112 316 14 19" fill="none" stroke="#8b7855" stroke-width="4"/>
+  <path d="m303 475 23-43 14 13 14-27" fill="none" stroke="#738065" stroke-width="3"/>
+  <path d="M316 450v22" stroke="#d0ba8a" stroke-opacity=".7"/>
+</svg>

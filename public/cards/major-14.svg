@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">La Templanza — integración dinámica</title><desc id="d">Dos recipientes distintos comparten un flujo que cambia del agua a la luz reflejada, unidos por un puente entre orillas.</desc>
+  <defs>
+    <linearGradient id="bank" x2="0" y2="1"><stop stop-color="#111a21"/><stop offset=".58" stop-color="#293231"/><stop offset="1" stop-color="#172022"/></linearGradient>
+    <linearGradient id="flow" x2="1" y2=".2"><stop stop-color="#6e9690"/><stop offset=".52" stop-color="#b5ab84"/><stop offset="1" stop-color="#d6c99f"/></linearGradient>
+    <radialGradient id="reflect"><stop stop-color="#cfc092" stop-opacity=".32"/><stop offset="1" stop-color="#cfc092" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#bank)"/>
+  <path d="M0 290c70-27 131-16 194 0 75 19 139 9 206-17v287H0Z" fill="#1b292c"/>
+  <path d="M0 315c63-21 124-7 194 10 76 19 144 6 206-17m-400 48c71-19 133-3 200 13 68 16 137 4 200-15" fill="none" stroke="#8da29a" stroke-opacity=".28"/>
+  <path d="M63 282c38-37 87-54 137-54 55 0 101 18 137 54" fill="none" stroke="#a69165" stroke-width="9"/>
+  <path d="M74 282c34-28 81-43 126-43s92 15 126 43" fill="none" stroke="#d1c197" stroke-opacity=".42" stroke-width="2"/>
+  <path d="M52 154h102l-9 104-23 23H83l-22-23Z" fill="#323736" stroke="#a48f62" stroke-width="2"/>
+  <path d="M247 164h99l-14 94-22 23h-30l-22-23Z" fill="#29363a" stroke="#a48f62" stroke-width="2"/>
+  <path d="M62 214h83l-5 42-20 19H84l-18-19Zm195 16h80l-6 28-20 23h-30l-19-23Z" fill="#678a83" fill-opacity=".48"/>
+  <path d="M151 205c29 18 34 37 48 44 17 10 35 5 55-16" fill="none" stroke="url(#flow)" stroke-width="7"/>
+  <path d="M151 205c29 18 34 37 48 44 17 10 35 5 55-16" fill="none" stroke="#e4d6b2" stroke-opacity=".65" stroke-width="1.5"/>
+  <circle cx="203" cy="249" r="4" fill="#e1d0a8"/>
+  <ellipse cx="202" cy="339" rx="76" ry="37" fill="url(#reflect)"/>
+  <path d="M188 277h28" stroke="#c7b181" stroke-width="1"/>
+  <path d="M74 292v21m252-21v21" stroke="#9b885f" stroke-opacity=".5" stroke-width="2"/>
+</svg>

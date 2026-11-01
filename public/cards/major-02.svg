@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">La Sacerdotisa — conocimiento latente</title><desc id="d">Agua nocturna y un velo translúcido separan dos reflejos lunares; un libro cerrado descansa fuera del centro.</desc>
+  <defs>
+    <linearGradient id="night" x2="0" y2="1"><stop stop-color="#0c1722"/><stop offset=".62" stop-color="#17242a"/><stop offset="1" stop-color="#20272a"/></linearGradient>
+    <linearGradient id="veil"><stop stop-color="#9ba7a4" stop-opacity="0"/><stop offset=".5" stop-color="#adb6ad" stop-opacity=".13"/><stop offset="1" stop-color="#9ba7a4" stop-opacity="0"/></linearGradient>
+    <radialGradient id="moon"><stop stop-color="#d6d2bd" stop-opacity=".24"/><stop offset="1" stop-color="#d6d2bd" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#night)"/>
+  <path d="M0 340c67-25 132-16 200-5s132 5 200-20v245H0Z" fill="#10191f"/>
+  <path d="M0 366c74-15 130-6 200 4s127 1 200-16M0 400c64-10 122 4 191 13 76 10 139-1 209-9m-400 40c77-7 131 8 203 12 81 5 136-7 197-10" fill="none" stroke="#81918e" stroke-opacity=".22"/>
+  <circle cx="268" cy="154" r="57" fill="url(#moon)"/>
+  <path d="M272 109a47 47 0 1 0 39 72 40 40 0 1 1-39-72Z" fill="#c4c1b0" fill-opacity=".42"/>
+  <path d="M111 181c21-30 48-45 88-48m-89 49a56 56 0 1 0 91 0 56 56 0 1 0-91 0Zm99 0a56 56 0 1 0 91 0 56 56 0 1 0-91 0Z" fill="none" stroke="#b9ac8b" stroke-opacity=".42" stroke-width="1.3"/>
+  <path d="M93 93c-18 87 6 218 42 305 16 39 33 61 48 77M306 85c27 112 7 220-28 320-12 34-26 57-45 76" fill="none" stroke="url(#veil)" stroke-width="49"/>
+  <path d="M84 296 84 176l18-22 17 22v120m181 0V176l18-22 17 22v120" fill="none" stroke="#7f8d8c" stroke-opacity=".28" stroke-width="2"/>
+  <path d="m95 443 66-18 37 14-65 24Z" fill="#263035" stroke="#a99b7c" stroke-opacity=".56"/>
+  <path d="m133 463 65-24v13l-65 24Z" fill="#171f23" stroke="#806f50" stroke-opacity=".46"/>
+  <path d="M20 352c76-17 127-12 181 3m-16 3c59 9 116 6 194-13" fill="none" stroke="#d1c4a2" stroke-opacity=".29" stroke-width="2"/>
+  <circle cx="200" cy="359" r="3" fill="#d8ccb0"/>
+</svg>

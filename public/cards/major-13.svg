@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="title desc">
+  <title id="title">La Muerte — fractura y umbral</title>
+  <desc id="desc">Una grieta de luz parte una masa de piedra oscura. Fragmentos de una estructura anterior se hunden en sombra, mientras un brote pequeño aparece entre las rocas.</desc>
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0a1218"/>
+      <stop offset=".52" stop-color="#211a20"/>
+      <stop offset="1" stop-color="#0b1419"/>
+    </linearGradient>
+    <linearGradient id="rock" x1="0" y1="0" x2=".9" y2="1">
+      <stop stop-color="#373236"/>
+      <stop offset=".37" stop-color="#27292b"/>
+      <stop offset=".72" stop-color="#171e22"/>
+      <stop offset="1" stop-color="#30282a"/>
+    </linearGradient>
+    <linearGradient id="rock-face" x1="0" y1="0" x2="1" y2=".35">
+      <stop stop-color="#4a3c38"/>
+      <stop offset=".48" stop-color="#242629"/>
+      <stop offset="1" stop-color="#131a1e"/>
+    </linearGradient>
+    <linearGradient id="fracture" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#dbc596" stop-opacity=".02"/>
+      <stop offset=".38" stop-color="#c4b185" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#f0e7d0" stop-opacity=".94"/>
+      <stop offset=".62" stop-color="#b8a981" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#8a9a8e" stop-opacity=".02"/>
+    </linearGradient>
+    <radialGradient id="far-light" cx=".52" cy=".52" r=".6">
+      <stop stop-color="#cfc5a8" stop-opacity=".17"/>
+      <stop offset="1" stop-color="#cfc5a8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="strata" width="69" height="55" patternUnits="userSpaceOnUse">
+      <path d="M3 12c12-5 21-5 31-1m20 19c8-3 13-3 19-1M13 48c11-4 19-4 28-1" fill="none" stroke="#b4a58e" stroke-opacity=".12" stroke-width="1"/>
+      <path d="m44 7 4-2m-37 25 5-2m38 19 4-1" stroke="#11181c" stroke-opacity=".5" stroke-width="2"/>
+    </pattern>
+    <clipPath id="stone-mass">
+      <path d="M40 449 54 403l-9-38 22-40-11-34 23-39 27 7 20-34 28 10 26-29 22 18 22-27 24 17 25-9 22 32 27-3 19 37-9 45 18 40-12 39 15 46-14 39Z"/>
+    </clipPath>
+  </defs>
+  <rect width="400" height="560" fill="url(#field)"/>
+  <ellipse cx="207" cy="307" rx="91" ry="212" fill="url(#far-light)"/>
+
+  <path d="M40 449 54 403l-9-38 22-40-11-34 23-39 27 7 20-34 28 10 26-29 22 18 22-27 24 17 25-9 22 32 27-3 19 37-9 45 18 40-12 39 15 46-14 39Z" fill="url(#rock)" stroke="#806f50" stroke-opacity=".34" stroke-width="1.4"/>
+  <g clip-path="url(#stone-mass)">
+    <rect x="35" y="185" width="335" height="280" fill="url(#strata)"/>
+    <path d="m46 294 39-21 15 9 25-28 14 6m-77 98 27-19 22 7 18-20m-72 76 37-22 22 8 22-13m105-126 24 13 17-8 31 26m-58 36 27-15 20 7m-69 83 29-21 19 7 25-18m-69 75 42-19 21 5 24-11" fill="none" stroke="#bdb09c" stroke-opacity=".23" stroke-width="1.3"/>
+    <path d="m69 248 14 7-6 15m44-36 8 11-5 14m-29 60 13 9-4 12m-18 59 11 8-2 14m190-139 15-9 11 14m-17 55 17 10-4 13m-43 54 13 11-3 15" fill="none" stroke="#10171b" stroke-opacity=".68" stroke-width="2"/>
+    <path d="M38 387c47-19 76-18 111-4m109-124c29-13 54-10 89 5m-220 94c26-7 43-5 61 3m-95 51c23-6 40-4 56 3" fill="none" stroke="#dbc596" stroke-opacity=".12" stroke-width="1"/>
+  </g>
+
+  <path d="M177 447 185 376l-10-40 10-37-7-38 18-31 8-31 12 33-5 34 8 38-10 37 8 39-5 66Z" fill="#090f14" fill-opacity=".94"/>
+  <path d="m190 447 5-71-7-39 8-37-7-39 11-31-3-27 10 34-5 29 8 38-8 35 7 40-3 66Z" fill="url(#fracture)"/>
+  <path d="m203 211 2 40-5 31 6 31-5 34 5 34-3 63" fill="none" stroke="#f1e9d6" stroke-opacity=".82" stroke-width="1.6"/>
+  <path d="M183 259c-13 31-19 62-17 94m53-105c14 35 18 69 14 108" fill="none" stroke="#c4b18b" stroke-opacity=".22" stroke-width="1.2"/>
+  <path d="M81 316a144 144 0 0 1 46-85m-25 207a144 144 0 0 0 60 26m115-243a144 144 0 0 1 49 76m-19 119a144 144 0 0 1-40 41" fill="none" stroke="#b59a68" stroke-opacity=".34" stroke-width="1.5"/>
+  <path d="m38 441 36 8 18-13 26 16 20-8 26 10 20-9m19 4 24 8 19-13 25 10 22-13 29 12 39-8" fill="none" stroke="#76654f" stroke-opacity=".55" stroke-width="2"/>
+  <path d="m67 454 18 2m134 1 20 3m51-7 19 1" stroke="#c1ad8c" stroke-opacity=".23" stroke-width="1"/>
+
+  <path d="M212 456c-2-14 2-26 9-37m-9 37c-10-8-15-18-14-28m14 19c7-6 13-8 20-8" fill="none" stroke="#aab39a" stroke-width="1.8"/>
+  <path d="M221 419c1 8 1 14 0 20m-21-20c4 7 8 11 12 15" fill="none" stroke="#c1c4ad" stroke-opacity=".72" stroke-width="1.2"/>
+  <circle cx="212" cy="456" r="2.7" fill="#dbc596"/>
+  <path d="m116 451-15-9 8-11 17 7m152 12 15-10 10 8-7 9" fill="#12181c" stroke="#806f50" stroke-opacity=".42" stroke-width="1"/>
+</svg>

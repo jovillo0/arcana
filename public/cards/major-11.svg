@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">La Fuerza — relación consciente con el instinto</title><desc id="d">Una persona y una criatura leonina comparten el espacio alrededor de una espiral de brasa sin dominarse.</desc>
+  <defs>
+    <linearGradient id="dark" x2="0" y2="1"><stop stop-color="#10171d"/><stop offset=".64" stop-color="#242927"/><stop offset="1" stop-color="#171d1c"/></linearGradient>
+    <radialGradient id="ember"><stop stop-color="#d48453" stop-opacity=".62"/><stop offset=".2" stop-color="#a34631" stop-opacity=".24"/><stop offset="1" stop-color="#a34631" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#dark)"/>
+  <path d="M28 441c57-48 106-56 172-28 62 26 115 21 175-9" fill="none" stroke="#586154" stroke-opacity=".34" stroke-width="2"/>
+  <ellipse cx="205" cy="396" rx="137" ry="101" fill="url(#ember)"/>
+  <path d="M65 354c-4-63 17-100 67-111 48-1 78 32 77 82l-32 42-75 4Z" fill="#4a4136" stroke="#a78e62" stroke-opacity=".62" stroke-width="2"/>
+  <path d="m74 266-26-29 10 49m43-49-3-39 28 34m44-22 17-32 9 48" fill="#403a32" stroke="#a78e62" stroke-opacity=".62" stroke-width="2"/>
+  <path d="m102 279 23-8 20 8-18 11Z" fill="#c5b28c"/>
+  <circle cx="105" cy="261" r="3" fill="#d8b880"/>
+  <path d="M222 411c1-38 7-81 16-125l27-33 32 8 20 37-24 48-3 74Z" fill="#252c2c" stroke="#95815e" stroke-opacity=".55"/>
+  <path d="m242 285 18-22 26 6 14 25-19 16-34-6Z" fill="#3d4240"/>
+  <path d="M200 374c-44-32-28-74 13-72 39 1 52 42 17 59-25 12-43-5-32-19 9-10 20-5 20 3" fill="none" stroke="#c37b4b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M200 374c-44-32-28-74 13-72 39 1 52 42 17 59-25 12-43-5-32-19 9-10 20-5 20 3" fill="none" stroke="#e4bd79" stroke-opacity=".55" stroke-width="1"/>
+  <path d="M184 443c22 6 43 4 64-5" stroke="#d0a66f" stroke-opacity=".35"/>
+  <path d="M82 342c13 2 18 8 19 18" fill="none" stroke="#c9b58b" stroke-width="2"/>
+</svg>

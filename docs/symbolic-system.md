@@ -17,6 +17,16 @@ Las fichas describen el sistema base de ARCANA, no los estilos interpretativos p
 - Las formas geométricas y los símbolos visuales forman parte del lenguaje propio de ARCANA. No deben presentarse como correspondencias históricas salvo que se documenten por separado y con fundamento.
 - Los estilos interpretativos —incluidas las lentes históricas, psicológicas o contemplativas— se documentarán aparte y no alterarán este sistema base.
 
+## 5. Interpretación simbólica local
+
+La primera capa interpretativa es determinista y local: recibe una lectura ya sorteada y deriva datos sin modificar sus cartas, posiciones u orden. No usa el texto de la pregunta para decidir las cartas y no llama al motor aleatorio.
+
+Cada ficha interpretativa conserva simultáneamente el núcleo, la expresión luminosa, la expresión sombría, la geometría, los símbolos, el principio transformador, la pregunta iniciática y el movimiento del Arcano. La posición añade su nombre y descripción. Luz y sombra son posibilidades coexistentes; no se seleccionan al azar ni dependen de una orientación de la carta.
+
+Las relaciones se calculan por pares en el orden de las posiciones. Las reglas comparan los movimientos del viaje, la progresión numérica de Arcanos dentro de una misma etapa y los términos compartidos por el núcleo y el principio transformador. También adjuntan las relaciones estructurales definidas por la tirada, cuando corresponden a ese par de posiciones. Estos patrones describen posibilidades para la reflexión, no hechos, probabilidades ni predicciones.
+
+La fuerza de una relación es una puntuación interna de ordenación, no una medida científica. La vista actual no la presenta como probabilidad. Esta capa no genera un párrafo final ni decide qué dimensión (luminosa o sombría) debe prevalecer; esa selección contextual queda deliberadamente abierta.
+
 ## 3. Los cuatro movimientos
 
 Los 22 Arcanos se organizan en cuatro movimientos consecutivos. Cada movimiento describe un tramo del recorrido, no una categoría rígida de personas o acontecimientos.
@@ -367,6 +377,37 @@ Las 22 cartas deben pertenecer claramente a una misma baraja y, al mismo tiempo,
 - La imagen y la interpretación deben expresar el mismo principio simbólico.
 - Los motivos visuales de estas fichas son propuestas originales para el sistema de ARCANA; no deben atribuirse a una tradición histórica por el mero hecho de recordar una inspiración general.
 
+La traducción de estos principios a composiciones, luz, color, continuidad entre cartas y exclusiones iconográficas está desarrollada en la [guía de dirección artística de los 22 Arcanos](./arcana-art-direction.md). Es documentación de producción y no forma parte de los datos de runtime.
+
 ## 8. Transparencia interpretativa
 
 El sistema de ARCANA es simbólico, cultural, creativo y reflexivo. No afirma predecir acontecimientos futuros con certeza, no presenta sus interpretaciones como hechos y no utiliza las cartas para establecer diagnósticos. Busca favorecer la contemplación, la narración simbólica y la reflexión personal.
+
+## 9. Capa narrativa local y lentes
+
+La capa narrativa local recibe una `ReadingSession`, su `SymbolicReading` ya calculada y una lente elegida. Produce una `NarrativeReading` nueva para presentar la lectura con la pregunta, la tirada, cada posición, las relaciones existentes, el movimiento y una síntesis. No vuelve a calcular ni modifica la extracción o las relaciones, y no usa azar ni servicios externos.
+
+Las seis lentes son:
+
+- **Hermético / Rosacruz:** transformación, geometría, polaridades e integración del recorrido. Es una lente propia de ARCANA y no afirma correspondencias históricas no documentadas.
+- **Tarot de Marsella:** numeración, estructura y secuencia; no reemplaza las imágenes propias de ARCANA ni pretende reproducir una baraja.
+- **Rider-Waite-Smith:** considera arquetipos y motivos iconográficos generales a través de los símbolos visuales propios de ARCANA; no copia imágenes ni escenas de otras barajas.
+- **Psicológico / Arquetípico:** propone contemplar patrones, percepción y tensiones como posibilidades, sin diagnóstico.
+- **Intuitivo / Contemplativo:** prioriza las imágenes y preguntas abiertas.
+- **Síntesis:** combina énfasis con cautela y no se presenta como tradición histórica única.
+
+La pregunta aporta contexto lingüístico, pero no permite inferir hechos sobre la vida de quien consulta. Para términos reconocidos de salud, asuntos legales o finanzas, la lectura añade un aviso: su carácter simbólico no sustituye información verificada ni asesoramiento profesional adecuado. La detección local es deliberadamente sencilla y puede no reconocer todas las consultas sensibles.
+
+La lente se puede cambiar antes de iniciar el sorteo y desde el resumen. En el resumen solo se vuelve a generar la narrativa; las cartas, posiciones y análisis simbólico permanecen iguales. Las plantillas son reglas deterministas y acotadas, no generación de lenguaje libre: su redacción y contextualización son limitadas, y no sustituyen asesoramiento especializado.
+
+## 10. Política editorial
+
+La guía común de voz reside en `src/engine/editorial/editorialGuide.ts`; define una voz reflexiva, simbólica, clara, contemplativa y no determinista, expresiones abiertas preferentes y afirmaciones que deben evitarse. `lensVocabulary.ts` registra el vocabulario y los límites particulares de cada lente. El selector muestra tanto la descripción como una nota editorial de la lente.
+
+La clasificación local distingue `MEDICAL`, `FINANCIAL`, `LEGAL`, `SAFETY`, `CRISIS`, `OTHER_SENSITIVE` y `NON_SENSITIVE`. Detecta por patrones de texto y solo orienta la redacción y los avisos; no se usa para escoger la tirada ni las cartas. Las preguntas sobre pensamientos o sentimientos de terceras personas se redirigen a la percepción, incertidumbres y conversaciones que sí corresponden a quien consulta.
+
+Los avisos se ajustan al ámbito detectado. Las preguntas de crisis o peligro inmediato reciben una indicación para buscar apoyo humano o emergencias; las consultas médicas, legales o financieras no reciben consejo de decisión ni pronósticos. El detector es una defensa editorial determinista de primera capa: no comprende el contexto ni sustituye una evaluación humana.
+
+`validateNarrative` inspecciona cada sección para detectar predicciones categóricas, instrucciones, atribuciones de estados mentales a terceros, afirmaciones clínicas o médicas, certezas sobrenaturales y lecturas literales de la Muerte. La palabra «Muerte» en su sentido simbólico —por ejemplo, como cierre de ciclo— sigue permitida. Si la narrativa generada incumple una regla, la construcción falla explícitamente en vez de mostrar una lectura que parezca válida.
+
+El corpus humano incluye casos claros, ambiguos y disputados; las expectativas no se generan con el clasificador y los casos pendientes o disputados no se fuerzan dentro de las métricas. El procedimiento para añadir ejemplos ficticios o anonimizados, la cobertura y las limitaciones están documentados en [Auditoría y corpus editorial](./editorial-audit.md).

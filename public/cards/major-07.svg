@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="t d">
+  <title id="t">El Carro — dirección compartida</title><desc id="d">Un vehículo geométrico avanza por una calzada elevada entre dos corrientes de polvo que buscan un rumbo común.</desc>
+  <defs>
+    <linearGradient id="road" x2="0" y2="1"><stop stop-color="#172129"/><stop offset=".52" stop-color="#35312e"/><stop offset="1" stop-color="#171d21"/></linearGradient>
+    <linearGradient id="horizon"><stop stop-color="#9d8b6c" stop-opacity="0"/><stop offset=".5" stop-color="#d7c59a" stop-opacity=".45"/><stop offset="1" stop-color="#9d8b6c" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="400" height="560" fill="url(#road)"/>
+  <path d="M0 274c76-42 119-32 188-18 71 14 139 0 212-40v94H0Z" fill="#222a2d"/>
+  <path d="M0 296h400" stroke="url(#horizon)" stroke-width="17"/>
+  <path d="M157 560 187 295h26l32 265" fill="#4b4033" fill-opacity=".6"/>
+  <path d="m28 560 142-265m202 265L230 295" stroke="#b59a68" stroke-opacity=".24" stroke-width="2"/>
+  <path d="M148 277c-42-62-37-93 9-104 35 12 43 44 23 104m72 0c43-62 37-93-9-104-35 12-43 44-23 104" fill="#353637" stroke="#98815a" stroke-width="2"/>
+  <path d="M125 292h150l-18-93h-114Z" fill="#25282a" stroke="#b59a68" stroke-opacity=".64" stroke-width="2"/>
+  <path d="m139 211 61 25 61-25m-61 25v49" fill="none" stroke="#d0bd92" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M160 265h80l22 33H138Z" fill="#514134" stroke="#a98e61" stroke-opacity=".6"/>
+  <circle cx="155" cy="305" r="18" fill="#141a1e" stroke="#b59a68"/><circle cx="245" cy="305" r="18" fill="#141a1e" stroke="#b59a68"/>
+  <path d="M84 121 102 91l17 30-17 30Zm41 27 12-20 12 20-12 19Zm47-28 14-26 14 26-14 23Zm55 16 12-22 12 22-12 19Zm44-31 14-25 14 25-14 20Z" fill="#ded2b4" fill-opacity=".72"/>
+  <path d="m105 183 10-18 10 18-10 15Zm190-24 11-20 11 20-11 17Z" fill="#ded2b4" fill-opacity=".65"/>
+  <path d="M74 483c32-17 59-21 86-13m80 18c28-13 55-12 87 2" fill="none" stroke="#b59a68" stroke-opacity=".35" stroke-width="2"/>
+</svg>
