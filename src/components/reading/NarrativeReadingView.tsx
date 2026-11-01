@@ -1,11 +1,38 @@
 import { ARCANA_BY_ID } from "../../data/arcana/arcana";
-import type { NarrativeReading } from "../../types/domain";
+import type { NarrativeReading, NarrativeRelationship } from "../../types/domain";
 
 interface NarrativeReadingViewProps {
   readonly narrative: NarrativeReading;
 }
 
+function renderRelationship({ relationship, text }: NarrativeRelationship) {
+  const from = ARCANA_BY_ID.get(relationship.fromCardId);
+  const to = ARCANA_BY_ID.get(relationship.toCardId);
+  if (!from || !to) {
+    throw new Error("La relación narrativa contiene un Arcano desconocido.");
+  }
+
+  return (
+    <li
+      data-from-card-id={relationship.fromCardId}
+      data-to-card-id={relationship.toCardId}
+      key={`${relationship.fromPositionId}-${relationship.toPositionId}`}
+    >
+      <details className="narrative-relationship">
+        <summary>{from.name} ↔ {to.name}</summary>
+        <p>{text}</p>
+      </details>
+    </li>
+  );
+}
+
 export function NarrativeReadingView({ narrative }: NarrativeReadingViewProps) {
+  const prioritizedRelationships = [...narrative.relationships].sort(
+    (left, right) => right.relationship.strength - left.relationship.strength,
+  );
+  const featuredRelationships = prioritizedRelationships.slice(0, 3);
+  const additionalRelationships = prioritizedRelationships.slice(3);
+
   if (narrative.prioritizeRealWorldSupport) {
     return (
       <div aria-label="Orientación prioritaria">
@@ -16,8 +43,9 @@ export function NarrativeReadingView({ narrative }: NarrativeReadingViewProps) {
           <p className="eyebrow">APOYO PRÁCTICO</p>
           <h3 id="real-world-support-title">Prioriza la ayuda adecuada</h3>
           <p>
-            La lectura simbólica queda en segundo plano para esta consulta. Busca apoyo humano
-            apropiado y utiliza información directa para valorar la situación.
+            Aquí lo importante es el apoyo práctico, no una lectura de cartas. Si hay peligro
+            inmediato, contacta con los servicios de emergencia locales o con alguien de confianza
+            que pueda acompañarte. Para decidir qué hacer, apóyate en información directa.
           </p>
         </section>
       </div>
@@ -31,7 +59,8 @@ export function NarrativeReadingView({ narrative }: NarrativeReadingViewProps) {
       )}
       <p className="narrative-reading__opening">{narrative.opening}</p>
       <p className="narrative-reading__guide">
-        Empieza por cada carta en su posición; después mira sus relaciones, el recorrido y la síntesis.
+        Puedes empezar por cada carta y, si te ayuda, seguir sus vínculos hasta el cierre. Quédate
+        con lo que te sirva; no hace falta que todo encaje.
       </p>
 
       <details aria-labelledby="narrative-cards-title" className="narrative-reading__section">
@@ -60,11 +89,12 @@ export function NarrativeReadingView({ narrative }: NarrativeReadingViewProps) {
                   <div className="narrative-card__content">
                     <p>{card.interpretation}</p>
                     <p className="narrative-card__dimension">
-                      <strong>Posibilidad luminosa:</strong> {card.lightReflection}.
+                      <strong>Posibilidad:</strong> {card.lightReflection}.
                     </p>
                     <p className="narrative-card__dimension">
-                      <strong>Posibilidad sombría:</strong> {card.shadowReflection}.
+                      <strong>Reto posible:</strong> {card.shadowReflection}.
                     </p>
+                    <p className="narrative-card__question-label">Para preguntarte</p>
                     <blockquote>«{card.question}»</blockquote>
                   </div>
                 </details>
@@ -82,28 +112,22 @@ export function NarrativeReadingView({ narrative }: NarrativeReadingViewProps) {
         {narrative.relationships.length === 0 ? (
           <p>Una sola carta no establece relaciones entre Arcanos en esta lectura.</p>
         ) : (
-          <ol className="narrative-relationship-list">
-            {narrative.relationships.map(({ relationship, text }) => {
-              const from = ARCANA_BY_ID.get(relationship.fromCardId);
-              const to = ARCANA_BY_ID.get(relationship.toCardId);
-              if (!from || !to) {
-                throw new Error("La relación narrativa contiene un Arcano desconocido.");
-              }
-
-              return (
-                <li
-                  data-from-card-id={relationship.fromCardId}
-                  data-to-card-id={relationship.toCardId}
-                  key={`${relationship.fromPositionId}-${relationship.toPositionId}`}
-                >
-                  <details className="narrative-relationship">
-                    <summary>{from.name} ↔ {to.name}</summary>
-                    <p>{text}</p>
-                  </details>
-                </li>
-              );
-            })}
-          </ol>
+          <>
+            <p className="narrative-reading__relationship-note">
+              Primero aparecen los vínculos con más señales simbólicas en común.
+            </p>
+            <ol className="narrative-relationship-list">
+              {featuredRelationships.map(renderRelationship)}
+            </ol>
+            {additionalRelationships.length > 0 && (
+              <details className="narrative-reading__additional-relationships">
+                <summary>Ver los otros {additionalRelationships.length} vínculos</summary>
+                <ol className="narrative-relationship-list">
+                  {additionalRelationships.map(renderRelationship)}
+                </ol>
+              </details>
+            )}
+          </>
         )}
       </details>
 

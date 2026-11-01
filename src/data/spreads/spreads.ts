@@ -4,7 +4,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "la-semilla",
     name: "La Semilla",
-    purpose: "Identificar el núcleo de una cuestión que necesita orientación sencilla.",
+    purpose: "Esta tirada te ayuda a ubicar la situación y encontrar un punto de partida.",
     primaryConsultationType: "orientacion-sencilla",
     cardCount: 3,
     positions: [
@@ -28,7 +28,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "el-espejo",
     name: "El Espejo",
-    purpose: "Explorar el autoconocimiento y la propia posición o percepción ante una situación.",
+    purpose: "Te ayuda a observar cómo te sitúas ante la situación y qué recursos puedes reconocer.",
     primaryConsultationType: "autoconocimiento",
     cardCount: 5,
     positions: [
@@ -56,7 +56,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "la-encrucijada",
     name: "La Encrucijada",
-    purpose: "Explorar una decisión entre caminos posibles.",
+    purpose: "Te ayuda a comparar dos caminos y aclarar qué criterio te importa más.",
     primaryConsultationType: "decision-eleccion",
     cardCount: 6,
     positions: [
@@ -88,7 +88,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "el-umbral",
     name: "El Umbral",
-    purpose: "Explorar transiciones, cambios de etapa y procesos de transformación.",
+    purpose: "Te ayuda a recorrer qué queda atrás, qué impulsa el cambio y qué empieza a surgir.",
     primaryConsultationType: "transicion-transformacion",
     cardCount: 5,
     positions: [
@@ -118,7 +118,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "el-nudo",
     name: "El Nudo",
-    purpose: "Comprender bloqueos, contradicciones o situaciones repetitivas.",
+    purpose: "Te ayuda a mirar qué te frena, qué sostiene el bloqueo y qué perspectiva podría abrirse.",
     primaryConsultationType: "bloqueo",
     cardCount: 5,
     positions: [
@@ -146,7 +146,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "el-sendero",
     name: "El Sendero",
-    purpose: "Explorar proyectos y procesos creativos, académicos, profesionales o evolutivos.",
+    purpose: "Te ayuda a ordenar un proyecto desde su origen hasta los recursos, desafíos y orientación.",
     primaryConsultationType: "proyecto-proceso",
     cardCount: 6,
     positions: [
@@ -175,7 +175,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "los-dos-rostros",
     name: "Los Dos Rostros",
-    purpose: "Explorar simbólicamente una dinámica interpersonal.",
+    purpose: "Te ayuda a mirar la dinámica de una relación desde lo que percibes y necesitas comprender.",
     primaryConsultationType: "relacion-interpersonal",
     cardCount: 6,
     positions: [
@@ -206,7 +206,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "la-rosa",
     name: "La Rosa",
-    purpose: "Comprender una situación profunda con varias dimensiones interrelacionadas.",
+    purpose: "Te ayuda a explorar una situación compleja sin forzarla a una única dimensión.",
     primaryConsultationType: "comprension-profunda",
     cardCount: 7,
     positions: [
@@ -238,7 +238,7 @@ export const SPREADS: readonly Spread[] = [
   {
     id: "el-circulo",
     name: "El Círculo",
-    purpose: "Explorar consultas abiertas, ambiguas o complejas que no encajan suficientemente en otra estructura.",
+    purpose: "Te ayuda a mirar una consulta abierta desde varias posiciones, sin imponer un recorrido temporal.",
     primaryConsultationType: "consulta-abierta-compleja",
     cardCount: 7,
     positions: [

@@ -15,6 +15,8 @@ export function CardFrame({
   description,
   className = "",
 }: CardFrameProps) {
+  const imageSrc = `${import.meta.env.BASE_URL}${arcana.imageRef.replace(/^\/+/, "")}`;
+
   return (
     <div className={`card-frame ${className}`.trim()}>
       {positionLabel && <span className="card-frame__position">{positionLabel}</span>}
@@ -25,7 +27,7 @@ export function CardFrame({
         aria-hidden="true"
         className="card-frame__art card-frame__art--illustrated"
       >
-        <img alt="" className="card-frame__image" src={arcana.imageRef} />
+        <img alt="" className="card-frame__image" src={imageSrc} />
       </div>
       {stageLabel && <p className="card-frame__stage">{stageLabel}</p>}
       <h3 className="card-frame__name">{arcana.name}</h3>

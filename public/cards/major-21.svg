@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="560" viewBox="0 0 400 560" role="img" aria-labelledby="title desc">
-  <title id="title">El Mundo — cuenca de integración</title>
-  <desc id="desc">Un horizonte circular abraza un valle de piedra, agua y vegetación. Rutas distintas confluyen en una poza central donde una semilla transformada recoge la luz.</desc>
+  <title id="title">El Mundo — valle de integración</title>
+  <desc id="desc">Un valle abierto de piedra, agua y vegetación reúne rutas distintas en una poza central donde una semilla transformada recoge la luz.</desc>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
       <stop stop-color="#0e1921"/>
@@ -35,14 +35,14 @@
       <path d="m4 9 9-2m14 16 7-2M15 30l4-1" stroke="#d5be8f" stroke-opacity=".1" stroke-width="1"/>
       <path d="m22 5 2 2M5 23l2 1" stroke="#10171a" stroke-opacity=".3" stroke-width="1"/>
     </pattern>
-    <clipPath id="basin">
-      <circle cx="200" cy="286" r="169"/>
+    <clipPath id="landscape">
+      <rect x="12" y="114" width="376" height="344"/>
     </clipPath>
   </defs>
   <rect width="400" height="560" fill="#10171d"/>
-  <circle cx="200" cy="286" r="169" fill="url(#sky)"/>
-  <circle cx="200" cy="286" r="169" fill="url(#atmosphere)"/>
-  <g clip-path="url(#basin)">
+  <rect x="12" y="114" width="376" height="344" fill="url(#sky)"/>
+  <ellipse cx="200" cy="280" rx="190" ry="164" fill="url(#atmosphere)"/>
+  <g clip-path="url(#landscape)">
     <path d="M22 114h356v344H22Z" fill="url(#sky)"/>
     <path d="M14 258 43 228l27 14 28-34 29 24 26-14 34 23 31-18 33 18 28-25 31 26 28-15 33 28v110H14Z" fill="#262e2c"/>
     <path d="m21 259 25-23 26 14 28-34 28 24 27-14 34 23 31-18 33 18 28-25 31 26 28-15 30 26" fill="none" stroke="#9d967f" stroke-opacity=".32" stroke-width="1.4"/>
@@ -83,6 +83,4 @@
     <path d="M31 374c22-9 41-12 60-9m227-1c22-8 41-8 62-1M113 427c20 11 39 17 58 18m103-15c16-6 29-14 42-25" fill="none" stroke="#8d9a82" stroke-opacity=".37" stroke-width="1.4"/>
     <rect x="28" y="114" width="344" height="344" fill="url(#stone-grain)" opacity=".54"/>
   </g>
-  <circle cx="200" cy="286" r="169" fill="none" stroke="#dbc596" stroke-opacity=".54" stroke-width="1.8" stroke-dasharray="226 20 172 16 246"/>
-  <path d="M73 164a169 169 0 0 1 70-39m133 15a169 169 0 0 1 53 51m-29 251a169 169 0 0 1-59 27" fill="none" stroke="#b59a68" stroke-opacity=".27" stroke-width="1.2"/>
 </svg>

@@ -288,5 +288,6 @@ const geminiDevelopmentProxy: Plugin = {
 };
 
 export default defineConfig({
+  base: process.env.GITHUB_PAGES === "true" ? "/arcana/" : "/",
   plugins: [react(), developmentGalleryRoute, geminiDevelopmentProxy],
 });

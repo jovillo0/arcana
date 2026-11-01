@@ -90,7 +90,7 @@ describe("human-reviewed editorial corpus", () => {
     expect(evaluation.totalCases).toBe(EDITORIAL_CASES.length);
     expect(evaluation.ambiguousCases).toBeGreaterThan(0);
     expect(evaluation.pendingCases).toBeGreaterThan(0);
-    expect(evaluation.disputedCases).toBeGreaterThan(0);
+    expect(evaluation.disputedCases).toBe(0);
     expect(evaluation.evaluatedCases).toBeLessThan(evaluation.totalCases);
     expect(evaluation.evaluatedCases + evaluation.pendingCases + evaluation.disputedCases)
       .toBe(evaluation.totalCases);
@@ -98,11 +98,11 @@ describe("human-reviewed editorial corpus", () => {
       totalCases: 40,
       clearCases: 35,
       ambiguousCases: 5,
-      reviewedCases: 34,
+      reviewedCases: 35,
       pendingCases: 5,
-      disputedCases: 1,
-      evaluatedCases: 34,
-      correct: 34,
+      disputedCases: 0,
+      evaluatedCases: 35,
+      correct: 35,
       accuracy: 1,
       precision: 1,
       recall: 1,
@@ -122,7 +122,7 @@ describe("human-reviewed editorial corpus", () => {
       Object.hasOwn(distribution, actualCategory),
     )).toBe(true);
     expect(evaluation.disagreements.map(({ id }) => id))
-      .toContain("literal-tower-damaged-building");
+      .not.toContain("literal-tower-damaged-building");
   });
 
   it("keeps reviewed, non-ambiguous cases as regression expectations", () => {
@@ -133,9 +133,9 @@ describe("human-reviewed editorial corpus", () => {
 
     expect(mismatches).toEqual([]);
     expect(evaluation.disagreements.map(({ id }) => id))
-      .toContain("literal-tower-damaged-building");
+      .not.toContain("literal-tower-damaged-building");
     expect(evaluation.results.find(({ id }) => id === "literal-tower-damaged-building")
-      ?.reviewStatus).toBe("disputed");
+      ?.reviewStatus).toBe("reviewed");
   });
 
   it("retains six separate Tarot symbol-versus-literal boundary pairs", () => {
@@ -166,7 +166,7 @@ describe("human-reviewed editorial corpus", () => {
     expect(death?.literalCase.expectedCategory).toBe("AMBIGUOUS");
     expect(death?.literalCase.reviewStatus).toBe("pending");
     expect(tower?.literalCase.expectedCategory).toBe("SAFETY");
-    expect(tower?.literalCase.reviewStatus).toBe("disputed");
+    expect(tower?.literalCase.reviewStatus).toBe("reviewed");
     expect(justice?.literalCase.expectedCategory).toBe("LEGAL");
   });
 

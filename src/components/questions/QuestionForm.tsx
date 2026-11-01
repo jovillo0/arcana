@@ -1,11 +1,11 @@
 import { InterpretationLensSelector } from "../reading/InterpretationLensSelector";
-import type { InterpretationLensId } from "../../types/domain";
+import type { InterpretationLensPreference } from "../../types/domain";
 
 interface QuestionFormProps {
   readonly question: string;
   readonly error: string | null;
-  readonly lens: InterpretationLensId;
-  readonly onLensChange: (lens: InterpretationLensId) => void;
+  readonly lens: InterpretationLensPreference;
+  readonly onLensChange: (lens: InterpretationLensPreference) => void;
   readonly onQuestionChange: (question: string) => void;
   readonly onSubmit: () => void;
 }

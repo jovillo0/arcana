@@ -31,7 +31,6 @@ export function QuestionRecommendation({
         <div className="recommendation-spread__intro">
           <h3>{spread.name}</h3>
           <p className="spread-why"><strong>Por qué puede encajar:</strong> {recommendation.explanation}</p>
-          <p className="spread-purpose"><strong>Qué permite explorar:</strong> {spread.purpose}</p>
           <span className="card-count">{spread.cardCount} {spread.cardCount === 1 ? "carta" : "cartas"}</span>
         </div>
         <SpreadPreview spread={spread} />

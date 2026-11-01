@@ -90,4 +90,11 @@ describe("ARCANA catalog", () => {
     expect(ARCANA.slice(11, 17).every(({ journeyStage }) => journeyStage === "transformarse")).toBe(true);
     expect(ARCANA.slice(17).every(({ journeyStage }) => journeyStage === "reintegrarse")).toBe(true);
   });
+
+  it("frames La Muerte as a possible transformation rather than a necessary outcome", () => {
+    const death = ARCANA.find(({ id }) => id === "major-13");
+
+    expect(death?.symbolicCore).toContain("puede");
+    expect(death?.symbolicCore).not.toContain("necesario");
+  });
 });

@@ -11,15 +11,53 @@ const SPREAD_BY_INTENT: Readonly<Record<QuestionIntent, string>> = {
   open: "el-circulo",
 };
 
-const INTENT_EXPLANATIONS: Readonly<Record<QuestionIntent, string>> = {
-  general: "La Semilla contempla la condición de partida, el potencial emergente y una orientación.",
-  decision: "La Encrucijada permite comparar dos caminos, contemplar qué pone en juego cada uno y explorar un criterio de reflexión.",
-  transformation: "El Umbral organiza la reflexión en torno a lo que queda atrás, el impulso, el cambio y lo que comienza a emerger.",
-  blockage: "El Nudo explora cómo aparece el bloqueo, qué tensión lo sostiene y qué perspectivas pueden ampliar su comprensión.",
-  selfKnowledge: "El Espejo pone en relación lo que reconoces, tus recursos, el núcleo interior y una posible integración.",
-  project: "El Sendero permite contemplar el origen, la motivación, los recursos, los desafíos y la orientación de un proceso.",
-  open: "El Círculo contempla el núcleo y varias dimensiones de una consulta abierta sin imponer un recorrido temporal.",
+const SIGNAL_EXPLANATIONS: Readonly<Record<string, string>> = {
+  "menciona elegir o decidir": "estás pensando qué elegir",
+  "compara alternativas explícitas": "comparas opciones",
+  "plantea una elección condicional": "te preguntas si continuar o cambiar de rumbo",
+  "menciona un cambio o una transición": "estás atravesando un cambio",
+  "describe el cierre o comienzo de una etapa": "estás cerrando o empezando una etapa",
+  "describe un bloqueo o impedimento": "algo te está frenando",
+  "expresa que algo no avanza": "sientes que algo no termina de avanzar",
+  "menciona una dificultad persistente o repetida": "una dificultad parece repetirse",
+  "pregunta por un patrón propio": "quieres observar un patrón propio",
+  "explora el autoconocimiento o la experiencia interior": "quieres comprender mejor tu experiencia interior",
+  "menciona un proyecto o una iniciativa": "estás pensando en un proyecto",
+  "pregunta por el desarrollo de un proceso": "quieres entender cómo se desarrolla un proceso",
+  "describe una situación compleja o con muchas dimensiones": "tu situación reúne varios factores",
+  "pide contemplar el conjunto de una situación": "quieres mirar la situación en conjunto",
+  "combina señales de varias intenciones": "tu pregunta reúne varias dimensiones",
 };
+
+const SPREAD_PURPOSES: Readonly<Record<QuestionIntent, string>> = {
+  general: "ubicar el punto de partida y reconocer qué empieza a tomar forma",
+  decision: "comparar tus opciones y aclarar qué criterio te importa más",
+  transformation: "recorrer qué estás dejando atrás, qué impulsa el cambio y qué empieza a surgir",
+  blockage: "mirar qué te frena, qué sostiene el bloqueo y qué perspectiva puede abrirse",
+  selfKnowledge: "relacionar lo que reconoces de ti con tus recursos y cómo integrarlos",
+  project: "ordenar el origen del proyecto, sus recursos, desafíos y orientación",
+  open: "mirar distintas dimensiones de la consulta sin imponer un recorrido temporal",
+};
+
+function explainQuestionSignals(analysis: QuestionAnalysis): string {
+  const reasons = [...new Set(
+    analysis.signals
+      .map((signal) => SIGNAL_EXPLANATIONS[signal])
+      .filter((reason): reason is string => Boolean(reason)),
+  )].slice(0, 2);
+
+  if (reasons.length === 0) {
+    return "tu pregunta es amplia y todavía no señala un tema concreto";
+  }
+  if (reasons.length === 1) {
+    return reasons[0] ?? "tu pregunta es amplia";
+  }
+  return `${reasons[0]} y ${reasons[1]}`;
+}
+
+function capitalizeFirst(value: string): string {
+  return `${value.charAt(0).toLocaleUpperCase("es")}${value.slice(1)}`;
+}
 
 function findSpread(spreadId: string, catalog: readonly Spread[]): Spread {
   const spread = catalog.find(({ id }) => id === spreadId);
@@ -37,6 +75,6 @@ export function selectSpread(
 
   return {
     spread,
-    explanation: `Por la forma de tu pregunta, esta tirada puede ser especialmente adecuada. ${INTENT_EXPLANATIONS[analysis.consultationType]}`,
+    explanation: `${capitalizeFirst(explainQuestionSignals(analysis))}. ${spread.name} te ayuda a ${SPREAD_PURPOSES[analysis.consultationType]}.`,
   };
 }

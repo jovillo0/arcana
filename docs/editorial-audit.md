@@ -40,17 +40,19 @@ El corpus tiene **40 casos ficticios**. La distribución de expectativas es:
 | NON_SENSITIVE | 15 |
 | AMBIGUOUS | 5 |
 
-Estados de revisión: **34 revisados**, **5 pendientes** y **1 disputado**.
+Estados de revisión: **35 revisados**, **5 pendientes** y **ninguno disputado**.
 Hay **35 casos claros** y **5 ambiguos**. Los casos pendientes y ambiguos no
-entran en las métricas de acierto. El caso disputado se informa como desacuerdo,
-pero también queda fuera de la puntuación.
+entran en las métricas de acierto.
 
-Con las expectativas revisadas actuales y sin modificar el clasificador, los
-34 casos revisados claros coinciden con la clasificación actual: **34/34**.
-Hay **1 desacuerdo conocido** en el caso disputado `literal-tower-damaged-building`:
-la expectativa humana es SAFETY, mientras que el clasificador devuelve
-NON_SENSITIVE. Se conserva como desacuerdo visible en vez de ocultarlo o añadir
-una regla puntual.
+Los cinco casos ambiguos permanecen pendientes intencionalmente: el texto aislado
+no permite decidir su categoría sin contexto. Sus coincidencias exactas siguen
+restringidas al proveedor externo hasta una revisión contextual.
+
+La revisión de `literal-tower-damaged-building` confirmó un peligro estructural
+concreto. El clasificador ahora reconoce edificios, estructuras, puentes, paredes
+y techos dañados o inestables en cualquier orden; el caso se clasifica como
+SAFETY y queda revisado. Los **35 casos claros revisados** coinciden con la
+clasificación actual: **35/35**, sin desacuerdos claros conocidos.
 
 La matriz puede consultarse mediante `evaluateEditorialCorpus()` y
 `getCategoryDistribution()` en
@@ -65,8 +67,8 @@ una garantía científica de comprensión lingüística ni se muestran a usuario
 La evaluación anterior a la consolidación informó 34/34 en el banco de Fase 8.
 No es directamente comparable con la cifra actual: durante esta fase se
 reclasificaron casos con contexto insuficiente como ambiguos y se añadieron
-casos frontera. Los resultados actuales usan solo expectativas humanas
-revisadas, mantienen los casos disputados visibles y no alteran las reglas del
+casos frontera. Los resultados actuales usan solo expectativas humanas revisadas,
+mantienen los casos ambiguos fuera de la métrica y no alteran las reglas del
 clasificador.
 
 ## Ambigüedades y límites

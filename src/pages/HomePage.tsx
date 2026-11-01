@@ -10,7 +10,12 @@ import { SPREADS } from "../data/spreads/spreads";
 import { localQuestionAnalyzer } from "../engine/questions/analyseQuestion";
 import { buildSymbolicReading } from "../engine/interpretation/localSymbolicEngine";
 import { buildNarrativeReading } from "../engine/narrative/buildNarrativeReading";
-import type { InterpretationLensId } from "../types/domain";
+import type {
+  InterpretationLensId,
+  InterpretationLensPreference,
+  QuestionAnalysis,
+} from "../types/domain";
+import { selectAutomaticLens } from "../engine/interpretation/selectAutomaticLens";
 import {
   beginShuffling,
   completeShuffling,
@@ -35,6 +40,9 @@ export function HomePage() {
   const [hasStarted, setHasStarted] = useState(false);
   const [interpretationLens, setInterpretationLens] =
     useState<InterpretationLensId>("hermetic-rosicrucian");
+  const [lensPreference, setLensPreference] =
+    useState<InterpretationLensPreference>("hermetic-rosicrucian");
+  const [questionAnalysis, setQuestionAnalysis] = useState<QuestionAnalysis | null>(null);
   const [error, setError] = useState<string | null>(null);
   const completionButton = useRef<HTMLButtonElement>(null);
   const previousStage = useRef(experience.stage);
@@ -70,6 +78,17 @@ export function HomePage() {
     }
     previousStage.current = experience.stage;
   }, [experience.stage, hasStarted]);
+
+  function changeLensPreference(preference: InterpretationLensPreference) {
+    setLensPreference(preference);
+    if (preference === "automatic") {
+      if (questionAnalysis) {
+        setInterpretationLens(selectAutomaticLens(questionAnalysis));
+      }
+    } else {
+      setInterpretationLens(preference);
+    }
+  }
 
   useEffect(() => {
     if (experience.stage !== "shuffling") {
@@ -109,6 +128,10 @@ export function HomePage() {
     try {
       const analysis = localQuestionAnalyzer.analyze(experience.question);
       const recommendation = selectSpread(analysis);
+      setQuestionAnalysis(analysis);
+      if (lensPreference === "automatic") {
+        setInterpretationLens(selectAutomaticLens(analysis));
+      }
       setExperience({
         stage: "recommendation",
         question: experience.question,
@@ -142,11 +165,13 @@ export function HomePage() {
     setExperience((current) => current.stage === "question"
       ? { ...current, question }
       : current);
+    setQuestionAnalysis(null);
     setError(null);
   }
 
   function resetConsultation() {
     setExperience(createQuestionState());
+    setQuestionAnalysis(null);
     setHasStarted(false);
     setError(null);
   }
@@ -154,7 +179,7 @@ export function HomePage() {
   return (
     <main className="page-shell">
       <header className="site-header">
-        <a aria-label="ARCANA, inicio" className="wordmark" href="/">
+        <a aria-label="ARCANA, inicio" className="wordmark" href={import.meta.env.BASE_URL}>
           <ArcanaEmblem className="wordmark__symbol" />
           ARCANA
         </a>
@@ -188,8 +213,8 @@ export function HomePage() {
           </div>
           <QuestionForm
             error={error}
-            lens={interpretationLens}
-            onLensChange={setInterpretationLens}
+            lens={lensPreference}
+            onLensChange={changeLensPreference}
             onQuestionChange={changeQuestion}
             onSubmit={handleAnalyse}
             question={experience.question}
@@ -241,6 +266,7 @@ export function HomePage() {
             onReturnToQuestion={() => {
               if (experience.stage === "ritual") {
                 setExperience(createQuestionState(experience.question));
+                setQuestionAnalysis(null);
                 setError(null);
               }
             }}
@@ -283,7 +309,7 @@ export function HomePage() {
         symbolicReading && narrativeReading && (
         <ReadingSummary
           onNewQuestion={resetConsultation}
-          onLensChange={setInterpretationLens}
+          onLensChange={changeLensPreference}
           onReturnToSpread={() => setExperience((current) => returnToRevealed(current))}
           onPrepareAnother={() => {
             setExperience((current) => prepareAnotherDraw(current));
@@ -291,6 +317,7 @@ export function HomePage() {
           }}
           interpretation={symbolicReading}
           lens={interpretationLens}
+          lensPreference={lensPreference}
           narrative={narrativeReading}
           reading={experience.reading}
         />

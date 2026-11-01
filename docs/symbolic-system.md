@@ -225,7 +225,7 @@ Cada ficha define el núcleo, las expresiones luminosa y sombría, la geometría
 
 ### XIII · La Muerte
 
-- **Núcleo o principio:** Final necesario para una transformación real.
+- **Núcleo o principio:** El cierre de una forma agotada puede abrir espacio para otra transformación.
 - **Manifestación luminosa:** Liberación, cambio profundo, renovación.
 - **Manifestación sombría:** Resistencia, apego, miedo a terminar.
 - **Geometría simbólica:** Círculo atravesando un umbral.
@@ -396,9 +396,16 @@ Las seis lentes son:
 - **Intuitivo / Contemplativo:** prioriza las imágenes y preguntas abiertas.
 - **Síntesis:** combina énfasis con cautela y no se presenta como tradición histórica única.
 
+El modo **Automático** usa la intención y confianza de `analyseQuestion()` para
+proponer una lente: transformación → Hermético / Rosacruz; decisión → Tarot de
+Marsella; bloqueo → Rider-Waite-Smith; autoconocimiento → Psicológico /
+Arquetípico; proyecto → Intuitivo / Contemplativo. Las consultas abiertas o con
+confianza inferior a 0,55 usan Síntesis. La elección es determinista, se puede
+cambiar manualmente y solo afecta a la narrativa.
+
 La pregunta aporta contexto lingüístico, pero no permite inferir hechos sobre la vida de quien consulta. Para términos reconocidos de salud, asuntos legales o finanzas, la lectura añade un aviso: su carácter simbólico no sustituye información verificada ni asesoramiento profesional adecuado. La detección local es deliberadamente sencilla y puede no reconocer todas las consultas sensibles.
 
-La lente se puede cambiar antes de iniciar el sorteo y desde el resumen. En el resumen solo se vuelve a generar la narrativa; las cartas, posiciones y análisis simbólico permanecen iguales. Las plantillas son reglas deterministas y acotadas, no generación de lenguaje libre: su redacción y contextualización son limitadas, y no sustituyen asesoramiento especializado.
+La perspectiva manual o automática se elige antes del sorteo y se puede cambiar desde el resumen. En el resumen solo se vuelve a generar la narrativa; las cartas, posiciones y análisis simbólico permanecen iguales. Las plantillas son reglas deterministas y acotadas, no generación de lenguaje libre: su redacción y contextualización son limitadas, y no sustituyen asesoramiento especializado.
 
 ## 10. Política editorial
 
@@ -410,4 +417,4 @@ Los avisos se ajustan al ámbito detectado. Las preguntas de crisis o peligro in
 
 `validateNarrative` inspecciona cada sección para detectar predicciones categóricas, instrucciones, atribuciones de estados mentales a terceros, afirmaciones clínicas o médicas, certezas sobrenaturales y lecturas literales de la Muerte. La palabra «Muerte» en su sentido simbólico —por ejemplo, como cierre de ciclo— sigue permitida. Si la narrativa generada incumple una regla, la construcción falla explícitamente en vez de mostrar una lectura que parezca válida.
 
-El corpus humano incluye casos claros, ambiguos y disputados; las expectativas no se generan con el clasificador y los casos pendientes o disputados no se fuerzan dentro de las métricas. El procedimiento para añadir ejemplos ficticios o anonimizados, la cobertura y las limitaciones están documentados en [Auditoría y corpus editorial](./editorial-audit.md).
+El corpus humano distingue casos claros y ambiguos y conserva el estado de revisión; las expectativas no se generan con el clasificador y los casos pendientes o disputados no se fuerzan dentro de las métricas. El procedimiento para añadir ejemplos ficticios o anonimizados, la cobertura y las limitaciones están documentados en [Auditoría y corpus editorial](./editorial-audit.md).

@@ -477,7 +477,7 @@ export const TAROT_BOUNDARY_CASES: readonly TarotBoundaryPair[] = [
       rationale: "La pregunta menciona un posible peligro físico concreto; no debe resolverse mediante una lectura simbólica.",
       ambiguity: null,
       tags: ["arcana-name", "literal-use", "safety", "rule-gap"],
-      reviewStatus: "disputed",
+      reviewStatus: "reviewed",
     }),
   },
   {

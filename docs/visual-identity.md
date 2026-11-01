@@ -58,10 +58,10 @@ añaden todos los motivos a todas las pantallas.
 ## Marco y reverso
 
 `CardFrame` (`src/components/cards/CardFrame.tsx`) aporta a cada Arcano el
-marco, numeral romano, espacio reservado para una ilustración original, nombre y
-marca geométrica inferior. Las variantes de resumen y revelación comparten esa
-estructura; el espacio central sigue siendo un campo provisional, no una
-ilustración final.
+marco, numeral romano, ilustración original, nombre y marca geométrica inferior.
+Las variantes de resumen y revelación comparten esa estructura. Las 22
+ilustraciones SVG locales forman el conjunto del prototipo; su aprobación
+artística final permanece separada de la implementación funcional.
 
 El reverso usa un marco doble dorado, una superficie azul-negra/granate, una
 geometría interior simétrica y el emblema central. Todos los dorsos son iguales:
@@ -81,5 +81,7 @@ y escritorio se conserva la relación espacial definida por cada tirada. Los
 controles mantienen foco visible y activación por teclado; `prefers-reduced-motion`
 reduce las animaciones.
 
-Las ilustraciones individuales, sus motivos simbólicos y cualquier guía
-específica de cada Arcano pertenecen a una fase posterior.
+Los motivos específicos de cada Arcano están documentados en
+[`arcana-art-direction.md`](./arcana-art-direction.md). La revisión funcional
+comprueba su carga, escala y coherencia; la selección de una técnica artística
+final y la aprobación visual siguen requiriendo criterio humano.

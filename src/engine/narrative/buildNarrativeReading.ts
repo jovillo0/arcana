@@ -15,23 +15,31 @@ import type {
 import { getArcanaNameForNarrative, narrateCard } from "./narrativeTemplates";
 
 const STAGE_LABELS: Readonly<Record<JourneyStage, string>> = {
-  constituirse: "Constituirse",
-  "entrar-en-el-mundo": "Entrar en el mundo",
-  transformarse: "Transformarse",
-  reintegrarse: "Reintegrarse",
+  constituirse: "dar forma a una posibilidad",
+  "entrar-en-el-mundo": "llevar una idea a la práctica",
+  transformarse: "atravesar un cambio",
+  reintegrarse: "integrar lo aprendido",
 };
 
 const PATTERN_LABELS: Readonly<Record<SymbolicRelationshipPattern, string>> = {
-  continuity: "continuidad",
-  contrast: "contraste estructural",
-  reinforcement: "refuerzo",
-  tension: "tensión",
-  transition: "transición",
-  repetition: "repetición conceptual",
-  "stage-progression": "progresión entre etapas",
-  "stage-return": "retorno a una etapa anterior",
-  "stage-jump": "salto entre etapas",
+  continuity: "un hilo que continúa",
+  contrast: "un contraste",
+  reinforcement: "un refuerzo",
+  tension: "una tensión",
+  transition: "un cambio de dirección",
+  repetition: "una idea que reaparece",
+  "stage-progression": "un paso hacia otra etapa",
+  "stage-return": "un regreso a una etapa anterior",
+  "stage-jump": "un salto entre etapas",
 };
+
+function joinInSpanish(values: readonly string[]): string {
+  if (values.length < 2) {
+    return values[0] ?? "";
+  }
+  const last = values[values.length - 1];
+  return `${values.slice(0, -1).join(", ")} y ${last}`;
+}
 
 function getLens(
   lensId: InterpretationLensId,
@@ -44,22 +52,22 @@ function getLens(
 }
 
 function buildOpening(reading: ReadingSession, lens: InterpretationTradition): string {
-  return `Esta lectura simbólica de «${reading.spread.name}», contemplada desde la lente ${lens.name}, toma como punto de partida la pregunta que has formulado. Las cartas no confirman hechos ni predicen resultados; ofrecen imágenes y relaciones para una reflexión personal.`;
+  const question = reading.question.trim();
+  const punctuation = /[.!?]$/u.test(question) ? "" : ".";
+
+  return `Has preguntado: «${question}»${punctuation} La tirada «${reading.spread.name}» ofrece una forma simbólica de mirar el tema desde ${lens.name}. No es una respuesta cerrada ni una predicción; tómala como un punto de partida. Las cartas no confirman hechos ni predicen resultados.`;
 }
 
 function buildRelationshipText(
   relationship: SymbolicCardRelationship,
-  lens: InterpretationTradition,
 ): string {
   const fromName = getArcanaNameForNarrative(relationship.fromCardId);
   const toName = getArcanaNameForNarrative(relationship.toCardId);
-  const detectedPatterns = relationship.patterns
-    .map((pattern) => PATTERN_LABELS[pattern])
-    .join(" y ");
-  const observation = relationship.observations[0]
-    ?? "estas posiciones aparecen vinculadas en la lectura simbólica";
+  const detectedPatterns = joinInSpanish(
+    relationship.patterns.map((pattern) => PATTERN_LABELS[pattern]),
+  );
 
-  return `${fromName} y ${toName} quedan relacionados por ${detectedPatterns}, según el análisis simbólico. Desde la lente ${lens.name}, ${observation.charAt(0).toLocaleLowerCase("es")}${observation.slice(1)} Esta relación puede contemplarse como una posibilidad, no como un hecho sobre tu situación.`;
+  return `La relación entre ${fromName} y ${toName} combina ${detectedPatterns}. Si te resuena, puedes preguntarte qué te resulta familiar en ese vínculo y qué posibilidad distinta quieres explorar. Es una lectura posible, no una afirmación sobre tu situación.`;
 }
 
 function buildMovement(symbolicReading: SymbolicReading): string {
@@ -75,16 +83,17 @@ function buildMovement(symbolicReading: SymbolicReading): string {
 
   const stages = symbolicReading.dominantStages
     .map((stage) => STAGE_LABELS[stage])
-    .join(" → ");
+    ;
+  const stageSummary = joinInSpanish(stages);
   const sequence = symbolicReading.sequenceObservations.join(" ");
   const endpoints = first.positionId === last.positionId
-    ? `La lectura se concentra en ${getArcanaNameForNarrative(first.arcanaId)}.`
-    : `El recorrido comienza con ${getArcanaNameForNarrative(first.arcanaId)} en la posición ${first.positionId} y concluye con ${getArcanaNameForNarrative(last.arcanaId)} en la posición ${last.positionId}.`;
+    ? `se centra en ${getArcanaNameForNarrative(first.arcanaId)}`
+    : `empieza con ${getArcanaNameForNarrative(first.arcanaId)} en la posición ${first.positionId} y llega a ${getArcanaNameForNarrative(last.arcanaId)} en la posición ${last.positionId}`;
   const stageMovement = stages.length > 0
-    ? ` Los movimientos más presentes son ${stages}.`
+    ? ` En el camino aparecen estos movimientos: ${stageSummary}.`
     : "";
 
-  return `La secuencia sugiere simbólicamente un recorrido. ${endpoints}${stageMovement}${sequence ? ` ${sequence}` : ""}`;
+  return `Si miras las cartas como un recorrido, ${endpoints}.${stageMovement}${sequence ? ` ${sequence}` : ""} Puedes preguntarte qué cambió entre el inicio y el cierre; la secuencia no anuncia un resultado.`;
 }
 
 function buildSynthesis(
@@ -99,20 +108,23 @@ function buildSynthesis(
 
   const dominantStage = symbolicReading.dominantStages[0];
   const stageClause = dominantStage
-    ? `El movimiento más representado es ${STAGE_LABELS[dominantStage]}`
-    : "La tirada reúne varios movimientos del viaje";
-  const tensionClause = symbolicReading.tensions.length > 0
-    ? ` Las tensiones detectadas en ${symbolicReading.tensions.length} relación(es) invitan a observar los cambios de dirección sin reducirlos a una oposición fija.`
+    ? `El foco está en ${STAGE_LABELS[dominantStage]}`
+    : "La tirada reúne varios movimientos del recorrido";
+  const tensionCount = symbolicReading.tensions.length;
+  const tensionClause = tensionCount > 0
+    ? tensionCount === 1
+      ? " También aparece una tensión; puedes mirarla sin forzar una sola respuesta."
+      : " También aparecen varias tensiones; puedes observarlas sin forzar una sola respuesta."
     : "";
   const reinforcementClause = symbolicReading.reinforcements.length > 0
-    ? ` También aparecen ${symbolicReading.reinforcements.length} relación(es) de refuerzo o repetición conceptual.`
+    ? " Algunos vínculos refuerzan una misma idea."
     : "";
   const mainRelationship = symbolicReading.relationships[0];
   const relationshipClause = mainRelationship
-    ? ` Entre sus vínculos, ${getArcanaNameForNarrative(mainRelationship.fromCardId)} y ${getArcanaNameForNarrative(mainRelationship.toCardId)} forman una relación de ${mainRelationship.patterns.map((pattern) => PATTERN_LABELS[pattern]).join(" y ")} ya identificada por la lectura simbólica.`
+    ? ` Un vínculo que destaca es el de ${getArcanaNameForNarrative(mainRelationship.fromCardId)} y ${getArcanaNameForNarrative(mainRelationship.toCardId)}: ${joinInSpanish(mainRelationship.patterns.map((pattern) => PATTERN_LABELS[pattern]))}.`
     : "";
 
-  return `${stageClause}. El paso de ${getArcanaNameForNarrative(first.arcanaId)} en la posición ${first.positionId} a ${getArcanaNameForNarrative(last.arcanaId)} en la posición ${last.positionId} permite contemplar cómo el núcleo de la tirada se relaciona con su cierre, sin afirmar un desenlace.${relationshipClause}${tensionClause}${reinforcementClause} Una posible síntesis es observar qué aspectos de este recorrido resuenan con la pregunta y cuáles permanecen abiertos.`;
+  return `${stageClause}. Las cartas van de ${getArcanaNameForNarrative(first.arcanaId)} en la posición ${first.positionId} a ${getArcanaNameForNarrative(last.arcanaId)} en la posición ${last.positionId}.${relationshipClause}${tensionClause}${reinforcementClause} Si te sirve, una forma de aterrizarlo es preguntarte: ¿qué pequeño paso, dentro de tu control, te ayudaría a explorar esta idea? No hace falta resolverlo todo hoy.`;
 }
 
 function buildReflectionQuestions(
@@ -179,7 +191,7 @@ export function buildNarrativeReading(
 
   const lens = getLens(lensId);
   const cards = symbolicReading.cards.map((card) =>
-    narrateCard(card, { question: reading.question, lens: lens.id }),
+    narrateCard(card, { lens: lens.id }),
   );
 
   const narrative = applyEditorialPolicy(reading, {
@@ -187,7 +199,7 @@ export function buildNarrativeReading(
     cards,
     relationships: symbolicReading.relationships.map((relationship) => ({
       relationship,
-      text: buildRelationshipText(relationship, lens),
+      text: buildRelationshipText(relationship),
     })),
     movement: buildMovement(symbolicReading),
     synthesis: buildSynthesis(symbolicReading, cards),

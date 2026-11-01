@@ -5,6 +5,7 @@ import { NarrativeReadingView } from "./NarrativeReadingView";
 import { SymbolicReadingView } from "./SymbolicReadingView";
 import type {
   InterpretationLensId,
+  InterpretationLensPreference,
   NarrativeReading,
   ReadingSession,
   SymbolicReading,
@@ -15,7 +16,8 @@ interface ReadingSummaryProps {
   readonly interpretation: SymbolicReading;
   readonly narrative: NarrativeReading;
   readonly lens: InterpretationLensId;
-  readonly onLensChange: (lens: InterpretationLensId) => void;
+  readonly lensPreference: InterpretationLensPreference;
+  readonly onLensChange: (lens: InterpretationLensPreference) => void;
   readonly onReturnToSpread: () => void;
   readonly onPrepareAnother: () => void;
   readonly onNewQuestion: () => void;
@@ -26,6 +28,7 @@ export function ReadingSummary({
   interpretation,
   narrative,
   lens,
+  lensPreference,
   onLensChange,
   onReturnToSpread,
   onPrepareAnother,
@@ -70,7 +73,11 @@ export function ReadingSummary({
               })}
             </ol>
           </details>
-          <InterpretationLensSelector onChange={onLensChange} value={lens} />
+          <InterpretationLensSelector
+            onChange={onLensChange}
+            resolvedLens={lens}
+            value={lensPreference}
+          />
         </>
       )}
       <NarrativeReadingView narrative={narrative} />

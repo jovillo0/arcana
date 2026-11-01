@@ -1,15 +1,22 @@
-import { INTERPRETATION_LENSES } from "../../data/traditions/traditions";
-import type { InterpretationLensId } from "../../types/domain";
+import { INTERPRETATION_TRADITIONS } from "../../data/traditions/traditions";
+import type { InterpretationLensId, InterpretationLensPreference } from "../../types/domain";
 
 interface InterpretationLensSelectorProps {
-  readonly value: InterpretationLensId;
-  readonly onChange: (lens: InterpretationLensId) => void;
+  readonly value: InterpretationLensPreference;
+  readonly resolvedLens?: InterpretationLensId;
+  readonly onChange: (lens: InterpretationLensPreference) => void;
 }
 
 export function InterpretationLensSelector({
   value,
+  resolvedLens,
   onChange,
 }: InterpretationLensSelectorProps) {
+  const selectedTradition = INTERPRETATION_TRADITIONS.find(({ id }) => id === value);
+  const resolvedTradition = resolvedLens
+    ? INTERPRETATION_TRADITIONS.find(({ id }) => id === resolvedLens)
+    : undefined;
+
   return (
     <fieldset className="lens-selector">
       <legend>Perspectiva de lectura</legend>
@@ -18,7 +25,7 @@ export function InterpretationLensSelector({
         aria-describedby="interpretation-lens-help"
         id="interpretation-lens"
         onChange={(event) => {
-          const selected = INTERPRETATION_LENSES.find(
+          const selected = INTERPRETATION_TRADITIONS.find(
             ({ id }) => id === event.currentTarget.value,
           );
           if (!selected) {
@@ -28,12 +35,14 @@ export function InterpretationLensSelector({
         }}
         value={value}
       >
-        {INTERPRETATION_LENSES.map((lens) => (
+        {INTERPRETATION_TRADITIONS.map((lens) => (
           <option key={lens.id} value={lens.id}>{lens.name}</option>
         ))}
       </select>
       <p id="interpretation-lens-help">
-        {INTERPRETATION_LENSES.find(({ id }) => id === value)?.description}
+        {value === "automatic" && resolvedTradition
+          ? `Perspectiva sugerida: ${resolvedTradition.name}. ${selectedTradition?.description}`
+          : selectedTradition?.description}
       </p>
     </fieldset>
   );

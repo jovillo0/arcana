@@ -39,6 +39,13 @@ describe("editorial question classification", () => {
   });
 
   it.each([
+    "¿Es seguro entrar en un edificio dañado?",
+    "¿Es seguro permanecer cerca de una estructura inestable?",
+  ])("prioritizes concrete structural hazards: %s", (question) => {
+    expect(classifySensitiveQuestion(question).category).toBe("SAFETY");
+  });
+
+  it.each([
     "¿Qué siente esta persona por mí?",
     "¿Qué piensa esa persona de mí?",
     "¿Me está ocultando algo?",
@@ -62,7 +69,7 @@ describe("editorial policy and narrative validation", () => {
     const narrative = buildNarrativeReading(reading, symbolic, "psychological-archetypal");
 
     expect(narrative.thirdPartyFocus).toBe(true);
-    expect(narrative.safetyNotice).toContain("no permiten conocer los pensamientos");
+    expect(narrative.safetyNotice).toContain("no pueden decirte qué piensa o siente otra persona");
     expect(narrative.cards.every(({ interpretation }) =>
       interpretation.includes("tu propia percepción"),
     )).toBe(true);
@@ -75,7 +82,7 @@ describe("editorial policy and narrative validation", () => {
     const narrative = buildNarrativeReading(reading, buildSymbolicReading(reading), "synthesis");
 
     expect(narrative.editorialCategory).toBe("MEDICAL");
-    expect(narrative.safetyNotice).toContain("No permiten evaluar un estado de salud");
+    expect(narrative.safetyNotice).toContain("No puede evaluar síntomas ni recomendar tratamientos");
     expect(narrative.synthesis).not.toMatch(/recuperarás|evolucionará/i);
   });
 
@@ -84,7 +91,7 @@ describe("editorial policy and narrative validation", () => {
     const narrative = buildNarrativeReading(reading, buildSymbolicReading(reading), "marseille");
 
     expect(narrative.editorialCategory).toBe("FINANCIAL");
-    expect(narrative.safetyNotice).toContain("no permite determinar la conveniencia financiera");
+    expect(narrative.safetyNotice).toContain("no puede decirte qué opción te conviene");
     expect(JSON.stringify(narrative)).not.toMatch(/\b(?:invierte|no inviertas|debes invertir)\b/i);
   });
 
@@ -93,7 +100,7 @@ describe("editorial policy and narrative validation", () => {
     const narrative = buildNarrativeReading(reading, buildSymbolicReading(reading), "synthesis");
 
     expect(narrative.editorialCategory).toBe("LEGAL");
-    expect(narrative.safetyNotice).toContain("no permite anticipar el resultado");
+    expect(narrative.safetyNotice).toContain("no puede anticipar su resultado");
     expect(JSON.stringify(narrative)).not.toMatch(/ganarás|perderás|ganar el juicio/i);
   });
 
@@ -142,7 +149,9 @@ describe("editorial policy and narrative validation", () => {
 
   it("defines one common editorial voice and preferred open-ended language", () => {
     expect(EDITORIAL_VOICE.voice).toContain("no determinista");
+    expect(EDITORIAL_VOICE.voice).toContain("cercana");
     expect(EDITORIAL_VOICE.preferredPhrases).toContain("invita a considerar");
+    expect(EDITORIAL_VOICE.preferredPhrases).toContain("si te sirve");
     expect(EDITORIAL_VOICE.avoidPhrases).toContain("el destino indica");
   });
 

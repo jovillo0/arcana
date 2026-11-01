@@ -31,17 +31,20 @@ export function SpreadPreview({ spread }: SpreadPreviewProps) {
           );
         })}
       </div>
-      <ol className="spread-preview__list">
-        {spread.positions.map(({ id, name, description }) => (
-          <li key={id}>
-            <span>{String(id).padStart(2, "0")}</span>
-            <div>
-              <strong>{name}</strong>
-              <p>{description}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <div className="spread-preview__details">
+        <p className="spread-preview__label">Qué mira cada posición</p>
+        <ol className="spread-preview__list">
+          {spread.positions.map(({ id, name, description }) => (
+            <li key={id}>
+              <span>{String(id).padStart(2, "0")}</span>
+              <div>
+                <strong>{name}</strong>
+                <p>{description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 }

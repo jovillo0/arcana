@@ -117,12 +117,12 @@ describe("local narrative reading engine", () => {
     const contemplative = narrate(reading, symbolic, "intuitive-contemplative");
     const synthesis = narrate(reading, symbolic, "synthesis");
 
-    expect(hermetic.cards[0]?.interpretation).toContain("geometría");
+    expect(hermetic.cards[0]?.interpretation).toContain("imagen geométrica");
     expect(marseille.cards[0]?.interpretation).toContain("número 2");
     expect(riderWaiteSmith.cards[0]?.interpretation).toContain("imaginería propia de ARCANA");
     expect(psychological.cards[0]?.interpretation).toContain("patrones de percepción");
     expect(contemplative.cards[0]?.interpretation).toContain("imagen abierta");
-    expect(synthesis.cards[0]?.interpretation).toContain("reúne");
+    expect(synthesis.cards[0]?.interpretation).toContain("qué respuesta abre");
     expect(new Set([
       hermetic.cards[0]?.interpretation,
       marseille.cards[0]?.interpretation,
@@ -147,12 +147,41 @@ describe("local narrative reading engine", () => {
     );
     const firstSymbolic = buildSymbolicReading(firstReading);
     const secondSymbolic = buildSymbolicReading(secondReading);
+    const firstNarrative = narrate(firstReading, firstSymbolic);
+    const secondNarrative = narrate(secondReading, secondSymbolic);
 
     expect(secondSymbolic).toEqual(firstSymbolic);
-    expect(narrate(firstReading, firstSymbolic).opening)
-      .toContain("la pregunta que has formulado");
-    expect(narrate(firstReading, firstSymbolic).cards[0]?.interpretation)
-      .not.toBe(narrate(secondReading, secondSymbolic).cards[0]?.interpretation);
+    expect(firstNarrative.opening).toContain("Has preguntado");
+    expect(firstNarrative.opening).not.toBe(secondNarrative.opening);
+    expect(firstNarrative.cards[0]?.interpretation)
+      .toBe(secondNarrative.cards[0]?.interpretation);
+  });
+
+  it.each([
+    "¿Qué puedo aprender sobre este cambio?",
+    "Estoy atravesando un cambio.",
+  ])("quotes the consultation without duplicating its final punctuation: %s", (question) => {
+    const reading = createReading(
+      getSpread("la-semilla"),
+      ["major-02", "major-16", "major-19"],
+      question,
+    );
+    const narrative = narrate(reading, buildSymbolicReading(reading));
+    const quotedQuestion = `«${question}»`;
+
+    expect(narrative.opening).toContain(quotedQuestion);
+    expect(narrative.opening).not.toContain(`${quotedQuestion}.`);
+    expect(narrative.opening).toContain("Las cartas no confirman hechos ni predicen resultados.");
+  });
+
+  it("closes with a practical next step without telling the reader what to decide", () => {
+    const reading = createReading(getSpread("la-semilla"), ["major-04", "major-16", "major-19"]);
+    const narrative = narrate(reading, buildSymbolicReading(reading));
+
+    expect(narrative.opening).toContain("Has preguntado");
+    expect(narrative.synthesis).toContain("pequeño paso");
+    expect(narrative.synthesis).toContain("No hace falta resolverlo todo hoy.");
+    expect(narrative.synthesis).not.toMatch(/\b(?:debes|deberías|tienes que)\b/i);
   });
 
   it("narrates only relations already present in SymbolicReading", () => {
@@ -188,7 +217,7 @@ describe("local narrative reading engine", () => {
     const symbolic = buildSymbolicReading(reading);
     const narrative = narrate(reading, symbolic);
 
-    expect(narrative.synthesis).toContain("Constituirse");
+    expect(narrative.synthesis).toContain("dar forma a una posibilidad");
     expect(narrative.synthesis).toContain("El Emperador");
     expect(narrative.synthesis).toContain("El Sol");
     expect(narrative.synthesis).toContain(
@@ -245,7 +274,7 @@ describe("local narrative reading engine", () => {
     );
     const narrative = narrate(reading, buildSymbolicReading(reading), lens.id);
 
-    expect(narrative.safetyNotice).toContain("marco de reflexión personal");
+    expect(narrative.safetyNotice).toContain("ordenar lo que quieres preguntar");
     },
   );
 });

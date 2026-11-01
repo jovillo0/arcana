@@ -10,6 +10,8 @@ export const EDITORIAL_VOICE: EditorialVoiceGuide = {
     "simbólica",
     "elegante",
     "clara",
+    "cercana",
+    "orientadora",
     "contemplativa",
     "prudente",
     "no determinista",
@@ -22,6 +24,9 @@ export const EDITORIAL_VOICE: EditorialVoiceGuide = {
     "una posible lectura es",
     "esta posición invita a preguntarse",
     "la secuencia puede sugerir",
+    "si te sirve",
+    "qué pequeño paso está bajo tu control",
+    "no tienes que resolverlo todo hoy",
   ],
   avoidPhrases: [
     "esto ocurrirá",

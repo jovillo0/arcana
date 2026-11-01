@@ -163,7 +163,7 @@ export const ARCANA: readonly Arcana[] = [
     light: "Introspección, prudencia, maduración.",
     shadow: "Aislamiento, parálisis, encerramiento.",
     geometry: "Hexágono incompleto con punto central.",
-    symbols: ["Lámpara", "Montaña", "Sendero", "Manto", "Estrella interior"],
+    symbols: ["Abertura hexagonal", "Montaña", "Sendero", "Luz interior", "Estrella interior"],
     elements: ["Montaña", "Estrella"],
     transformativePrinciple:
       "Hacer espacio para que la experiencia se convierta en discernimiento, sin exigir una respuesta inmediata.",
@@ -227,7 +227,7 @@ export const ARCANA: readonly Arcana[] = [
     number: 13,
     romanNumeral: "XIII",
     name: "La Muerte",
-    symbolicCore: "Final necesario para una transformación real.",
+    symbolicCore: "El cierre de una forma agotada puede abrir espacio para otra transformación.",
     light: "Liberación, cambio profundo, renovación.",
     shadow: "Resistencia, apego, miedo a terminar.",
     geometry: "Círculo atravesando un umbral.",
@@ -366,8 +366,8 @@ export const ARCANA: readonly Arcana[] = [
     symbolicCore: "Integración.",
     light: "Culminación, totalidad, pertenencia, realización.",
     shadow: "Miedo a cerrar el ciclo o convertir un logro en inmovilidad.",
-    geometry: "Círculo completo conteniendo las geometrías anteriores.",
-    symbols: ["Mandala", "Cuatro puertas", "Círculo vegetal", "Figura central", "Horizonte circular"],
+    geometry: "Cuenca circular abierta con rutas convergentes.",
+    symbols: ["Poza central", "Rutas convergentes", "Vegetación asimétrica", "Semilla transformada", "Horizonte abierto"],
     elements: ["Vegetación", "Horizonte"],
     transformativePrinciple:
       "Reunir lo aprendido en una totalidad capaz de concluir un ciclo y permitir otros comienzos.",

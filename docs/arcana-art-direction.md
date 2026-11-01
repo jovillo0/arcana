@@ -394,32 +394,30 @@ composición.
 1. **Idea visual central:** la experiencia necesita espacio para volverse
    discernimiento.
 2. **Núcleo simbólico:** discernimiento interior.
-3. **Composición:** sendero estrecho sube por una montaña oscura; figura
-   envuelta en un manto ocupa un tercio bajo. Una lámpara pequeña abre una
-   ventana hexagonal incompleta en el plano medio; la estrella interior no está
-   en el cielo, sino reflejada dentro de la lámpara. La mirada avanza lentamente
-   hacia la abertura.
-4. **Figura principal:** caminante inmóvil, de perfil o espalda, que no huye del
-   mundo; la postura sugiere pausa deliberada.
+3. **Composición:** un sendero estrecho sube por una montaña oscura y llega a
+   una abertura hexagonal incompleta en la roca. Un punto cálido en su interior
+   funciona como estrella interior; no hay una silueta que guíe a quien mira.
+4. **Figura principal:** ninguna. La pausa, la abertura y el tramo de sendero
+   iluminado ocupan el lugar del caminante.
 5. **Geometría dominante:** hexágono incompleto con punto central como ventana
    de luz.
-6. **Símbolos:** lámpara → atención; montaña → experiencia que requiere tiempo;
-   sendero → proceso no inmediato; manto → límite protector; estrella interior
-   → discernimiento que no necesita espectáculo.
+6. **Símbolos:** luz interior → atención; montaña → experiencia que requiere
+   tiempo; sendero → proceso no inmediato; abertura → espacio de reflexión;
+   estrella interior → discernimiento que no necesita espectáculo.
 7. **Elemento natural:** montaña y aire frío.
-8. **Luz:** lámpara cálida dirigida hacia el suelo inmediato, intensidad baja;
-   deja el horizonte sin revelar.
+8. **Luz:** un punto cálido ilumina solo el tramo inmediato del sendero; deja
+   el horizonte sin revelar.
 9. **Paleta secundaria:** pizarra azulada y ámbar ahumado.
 10. **Dimensión luminosa:** la pausa crea un campo pequeño pero suficiente para
     orientarse.
-11. **Dimensión sombría:** el sendero puede desaparecer tras la figura, haciendo
-    perceptible el riesgo de aislamiento o parálisis.
-12. **Detalle oculto:** una segunda huella aparece junto a la huella de la
-    figura, pero no se sabe si es anterior o posterior.
+11. **Dimensión sombría:** el sendero puede desaparecer antes de la abertura,
+   haciendo perceptible el riesgo de aislamiento o parálisis.
+12. **Detalle oculto:** uno de los lados de la abertura queda sin trazo, como si
+   el camino aún pudiera continuar.
 13. **Continuidad:** toma la consecuencia de La Justicia y la lleva al interior;
     La Rueda transforma esa pausa en percepción de ciclos.
-14. **Evitar:** anciano arquetípico, bastón y farol como conjunto heredado, nieve
-    dramática, sabio omnisciente o pose de guía espiritual.
+14. **Evitar:** silueta encapuchada con farol, anciano arquetípico, bastón, nieve
+   dramática, sabio omnisciente o pose de guía espiritual.
 
 ### X · La Rueda de la Fortuna — Entrar en el mundo
 
@@ -516,7 +514,7 @@ composición.
 
 1. **Idea visual central:** cerrar una forma agotada libera espacio para la
    transformación.
-2. **Núcleo simbólico:** final necesario para una transformación real.
+2. **Núcleo simbólico:** el cierre de una forma agotada puede abrir espacio para otra transformación.
 3. **Composición:** un círculo oscuro cruza un umbral vertical abierto. En primer
    plano, una hoja seca; en el plano medio, crisálida abierta junto a una puerta
    negra; al fondo, un amanecer muy estrecho y un brote. La dirección atraviesa
@@ -778,36 +776,34 @@ composición.
 1. **Idea visual central:** los principios recorridos se integran en una
    totalidad que puede cerrarse y volver a abrirse.
 2. **Núcleo simbólico:** integración.
-3. **Composición:** un círculo completo contiene cuatro puertas abiertas hacia
-   los márgenes; su interior vegetal integra semilla, rama, piedra, agua y
-   espiral como formas transformadas de motivos anteriores. Una figura central
-   puede ser abstracta o humana, en equilibrio y sin pose triunfal. El horizonte
-   circular deja una pequeña abertura de luz en la base para nuevos comienzos.
-4. **Figura principal:** presencia central de escala humana y postura serena,
-   integrada al campo en vez de dominarlo. Puede omitirse si el conjunto ya
-   ofrece centro.
-5. **Geometría dominante:** círculo completo que contiene las geometrías
-   anteriores: punto, eje, triángulo, cuadrado, pentágono, hexágono y espiral,
-   reconocibles como relaciones, no como un diagrama recargado.
-6. **Símbolos:** círculo vegetal → totalidad viva; cuatro puertas → apertura en
-   cuatro direcciones; figura central → integración; horizonte circular →
-   culminación y nuevo comienzo; formas geométricas previas → recorrido reunido.
+3. **Composición:** un valle abierto ocupa el ancho de la carta. Piedra, agua,
+   vegetación y rutas reúnen formas transformadas de motivos anteriores; las
+   rutas confluyen en una poza donde reaparece la semilla. La circularidad se
+   integra en la cuenca, no en un marco exterior.
+4. **Figura principal:** ninguna. La poza central y la semilla ofrecen un foco
+   sereno sin dominar el paisaje.
+5. **Geometría dominante:** cuenca circular abierta y rutas convergentes que
+   integran las geometrías anteriores sin formar un diagrama o medallón.
+6. **Símbolos:** poza central → integración; rutas convergentes → totalidad
+   compartida; vegetación asimétrica → diferencias vivas; semilla transformada
+   → nuevo comienzo; horizonte abierto → ciclo que vuelve a empezar.
 7. **Elemento natural:** vegetación, agua y horizonte.
-8. **Luz:** luz equilibrada desde el interior del círculo, suave y distribuida;
-   no hay un foco espectacular. Significa integración de diferencias.
+8. **Luz:** luz suave y equilibrada en el valle, sin un foco espectacular;
+   significa integración de diferencias.
 9. **Paleta secundaria:** verde profundo y marfil cálido.
 10. **Dimensión luminosa:** las formas coexistentes comparten estructura sin
     perder su singularidad.
-11. **Dimensión sombría:** una zona del círculo tiene densidad excesiva y puede
-    inmovilizar el ciclo si se cierra sobre sí mismo.
-12. **Detalle oculto:** en la abertura de la base reaparece la semilla de El
-    Loco, ahora con una raíz y todavía sin forma final.
+11. **Dimensión sombría:** una zona de agua estancada puede inmovilizar el ciclo
+   si la totalidad se cierra sobre sí misma.
+12. **Detalle oculto:** junto a la poza, la semilla de El Loco reaparece con una
+   raíz y todavía sin forma final.
 13. **Continuidad:** retoma la semilla, el punto de luz, el eje, la materia y el
     umbral del recorrido. Su pequeño espacio abierto enlaza con El Loco: integrar
     no significa terminar para siempre.
 14. **Evitar:** corona de laureles, figura danzante dentro de óvalo, cuatro
-    criaturas tradicionales, mandala ornamental exhaustivo, explosión de luz,
-    trofeo final o una “carta más poderosa” por tamaño y espectacularidad.
+   criaturas tradicionales, medallón exterior, mandala ornamental exhaustivo,
+   explosión de luz, trofeo final o una “carta más poderosa” por tamaño y
+   espectacularidad.
 
 ## Auditoría de coherencia y producción
 
@@ -828,9 +824,9 @@ composición.
 - **Originalidad:** las instrucciones incluyen exclusiones contra motivos y
   composiciones icónicas de barajas históricas o comerciales. Se reutiliza solo
   el sistema propio documentado de ARCANA y formas geométricas comunes.
-- **Referencias de imagen:** `imageRef` contiene rutas `/cards/major-XX.svg`,
-  pero el repositorio no incluye actualmente la carpeta `public/cards/`. Deben
-  tratarse como destinos previstos hasta que se produzcan los originales.
+- **Referencias de imagen:** `imageRef` resuelve los 22 SVG originales de
+   `public/cards/`. Son ilustraciones vectoriales del prototipo y siguen sujetas
+   a revisión y aprobación artística final.
 
 ### Decisiones para dirección artística humana
 

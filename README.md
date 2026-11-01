@@ -20,6 +20,22 @@ npm run dev
 
 Vite mostrará la dirección local de desarrollo en la terminal.
 
+## Publicación en GitHub Pages
+
+El repositorio incluye un workflow que ejecuta las pruebas y publica `dist/` en
+GitHub Pages cada vez que se actualiza `main`.
+
+1. Sube tus cambios a `main` en `https://github.com/jovillo0/arcana`.
+2. En GitHub, abre **Settings → Pages** y elige **GitHub Actions** como fuente
+   de publicación.
+3. Espera a que termine el workflow **Deploy to GitHub Pages** en la pestaña
+   **Actions**.
+4. Abre `https://jovillo0.github.io/arcana/`.
+
+La build de Pages usa `/arcana/` como base. Las builds locales conservan `/`.
+El experimento Gemini solo está disponible en desarrollo local; la web publicada
+usa la interpretación simbólica local y no necesita secretos ni backend.
+
 ### Experimento narrativo Gemini (solo desarrollo local)
 
 ARCANA usa siempre la narrativa local por defecto. La comparación experimental solo aparece

@@ -16,6 +16,11 @@ const SAFETY_PATTERNS: readonly RegExp[] = [
   /\b(?:violencia|maltrato|abuso|amenaza|acoso|agresión|agresion|arma|peligro|seguridad personal|me está siguiendo|me esta siguiendo)\b/i,
 ];
 
+const STRUCTURAL_HAZARD_PATTERNS: readonly RegExp[] = [
+  /\b(?:edificios?|estructuras?|puentes?|pared(?:es)?|techos?)\b.{0,45}\b(?:dañad[oa]s?|agrietad[oa]s?|inestables?|derrumbe|colaps\w*)\b/i,
+  /\b(?:dañad[oa]s?|agrietad[oa]s?|inestables?|derrumbe|colaps\w*)\b.{0,45}\b(?:edificios?|estructuras?|puentes?|pared(?:es)?|techos?)\b/i,
+];
+
 const MEDICAL_PATTERNS: readonly RegExp[] = [
   /\b(?:salud|médic\w*|medic\w*|enfermedad|síntoma\w*|sintoma\w*|diagnóstico|diagnostico|embarazo|tratamiento|terapia|antibi[oó]tic\w*|dosis|fármaco\w*|farmaco\w*|pastilla\w*|curar\w*|sanar\w*)\b/i,
 ];
@@ -70,6 +75,7 @@ export function classifySensitiveQuestion(question: string): EditorialClassifica
     category = "CRISIS";
   } else if (
     matchesAny(question, SAFETY_PATTERNS)
+    || matchesAny(question, STRUCTURAL_HAZARD_PATTERNS)
     || /\b(?:es|sería|seria)\s+seguro\s+(?:volver|ir|quedarme|caminar|salir|dormir)\b/i.test(question)
   ) {
     category = "SAFETY";

@@ -84,7 +84,7 @@ export interface Spread {
 }
 
 export interface InterpretationTradition {
-  readonly id: InterpretationLensId | "automatic";
+  readonly id: InterpretationLensPreference;
   readonly name: string;
   readonly description: string;
 }
@@ -96,6 +96,8 @@ export type InterpretationLensId =
   | "psychological-archetypal"
   | "intuitive-contemplative"
   | "synthesis";
+
+export type InterpretationLensPreference = InterpretationLensId | "automatic";
 
 export interface DrawnCard {
   readonly position: number;

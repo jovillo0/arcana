@@ -58,12 +58,28 @@ En el `CardFrame` de tirada se usa un recorte central para ampliar el arte en el
 espacio disponible. Los detalles más finos desaparecen como se espera; la
 composición principal y el contraste focal deben llevar la lectura.
 
-## Criterio humano pendiente
+## Revisión visual del prototipo
 
-Revisar la consistencia de contraste y legibilidad de los 22 motivos en la
-tirada real, especialmente en móvil. En particular, comprobar si el umbral de
-La Muerte expresa un cierre profundo sin volverse demasiado literal; si la
-cuenca de El Mundo se siente como paisaje integrado y no como medallón; si el
-Ermitaño comunica introspección sin parecer una estampa heredada; y si las
-figuras humanas de Los Enamorados y El Sol conservan suficiente abstracción.
-También queda por decidir cuánto acabado pictórico requerirá la baraja final.
+Las 22 ilustraciones se revisaron por etapa en la galería a escala grande y de
+tirada. Los 22 SVG cargan correctamente; la paleta, los marcos y los cambios de
+densidad entre etapas se mantienen coherentes. La tirada de cinco cartas también
+se comprobó a 360 px: conserva las posiciones, centra la quinta carta y no
+produce desbordamiento horizontal.
+
+La revisión produjo dos ajustes concretos: El Mundo pasó de un círculo exterior
+que lo hacía parecer medallón a un valle abierto donde la circularidad vive en
+la poza y las rutas; El Ermitaño sustituyó la silueta encapuchada por una
+abertura hexagonal iluminada en la montaña. La Muerte mantiene una fractura
+central legible sin personificación macabra; su brote es un detalle de lectura
+cercana, no un motivo de miniatura. Los Enamorados usa senderos y árboles, no
+figuras humanas como afirmaba la nota anterior. El Sol conserva dos formas
+humanas geométricas, sombras visibles y un muro atravesable, sin reproducir la
+escena tradicional de niño y caballo.
+
+## Aprobación artística final pendiente
+
+La revisión funcional y asistida no equivale a aprobación artística humana.
+Sigue pendiente decidir si la serie SVG es el acabado final o si se producirá
+una técnica híbrida, y revisar personalmente contraste, impresión y los 22
+motivos antes de congelar el arte. La galería conserva sus casillas de revisión
+solo en sesión y no se marcaron automáticamente.

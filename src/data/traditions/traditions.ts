@@ -7,37 +7,37 @@ export const INTERPRETATION_TRADITIONS: readonly InterpretationTradition[] = [
   {
     id: "hermetic-rosicrucian",
     name: "Hermético / Rosacruz",
-    description: "Mira las cartas como un recorrido de transformación y observa sus símbolos y polaridades.",
+    description: "Sigue cómo una idea cambia a lo largo de la tirada y qué tensiones conviven.",
   },
   {
     id: "marseille",
     name: "Tarot de Marsella",
-    description: "Se fija en los números, el orden y los contrastes entre posiciones.",
+    description: "Fíjate en los números, el orden de las cartas y los cambios entre posiciones.",
   },
   {
     id: "rider-waite-smith",
     name: "Rider-Waite-Smith",
-    description: "Observa arquetipos y símbolos en las ilustraciones propias de ARCANA.",
+    description: "Lee los símbolos de las imágenes y pregúntate qué posibilidades representan para ti.",
   },
   {
     id: "psychological-archetypal",
     name: "Psicológico / Arquetípico",
-    description: "Explora patrones y tensiones interiores como posibilidades de autoconocimiento.",
+    description: "Explora patrones y tensiones propios como preguntas, no como etiquetas.",
   },
   {
     id: "intuitive-contemplative",
     name: "Intuitivo / Contemplativo",
-    description: "Parte de las imágenes y preguntas para una lectura abierta.",
+    description: "Empieza por la imagen que más te llama y deja abiertas varias lecturas.",
   },
   {
     id: "synthesis",
     name: "Síntesis",
-    description: "Combina varias perspectivas con cautela para ofrecer una mirada de conjunto.",
+    description: "Reúne distintas perspectivas con cautela; ninguna cierra la respuesta.",
   },
   {
     id: "automatic",
     name: "Automático",
-    description: "Selección automática de lente, pendiente de definición.",
+    description: "Propone una perspectiva según la intención y la confianza del análisis local de la pregunta.",
   },
 ];
 

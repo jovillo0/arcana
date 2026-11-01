@@ -453,6 +453,17 @@ h1 em {
   transform: translate(-50%, -50%);
 }
 
+.spread-preview__details {
+  min-width: 0;
+}
+
+.spread-preview__label {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 500;
+}
+
 .spread-preview__list {
   display: grid;
   gap: 12px;
@@ -1363,6 +1374,13 @@ h1 em {
   font-style: italic;
 }
 
+.narrative-card__question-label {
+  margin: 12px 0 -7px;
+  color: var(--muted);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
 .narrative-relationship-list li,
 .narrative-reflection-list li {
   color: #c8bfb2;
@@ -1386,6 +1404,26 @@ h1 em {
   color: #c8bfb2;
   font-size: 11px;
   line-height: 1.75;
+}
+
+.narrative-reading__relationship-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.narrative-reading__additional-relationships {
+  margin-top: 12px;
+}
+
+.narrative-reading__additional-relationships > summary {
+  color: var(--gold);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.narrative-reading__additional-relationships > .narrative-relationship-list {
+  margin-top: 12px;
 }
 
 .narrative-provider-experiment {
@@ -2410,11 +2448,11 @@ h1 em {
   .tarot-table {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 34px 8px;
+    gap: 42px 8px;
     width: 100%;
     min-height: 0;
     aspect-ratio: auto;
-    padding: 17px 10px 23px;
+    padding: 17px 10px 34px;
     overflow: visible;
     border-color: rgba(213, 190, 143, 0.2);
   }
@@ -2440,11 +2478,15 @@ h1 em {
     column-gap: 16px;
   }
 
+  .tarot-table:has(.tarot-slot:nth-child(5)) .tarot-slot:last-child {
+    grid-column: 1 / -1;
+  }
+
   .tarot-slot__caption {
     top: calc(100% + 6px);
     max-width: 100%;
     color: #d0c7b9;
-    font-size: 8px;
+    font-size: 9px;
     line-height: 1.3;
   }
 
